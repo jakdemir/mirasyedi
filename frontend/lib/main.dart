@@ -21,9 +21,8 @@
     }
 
     class _InheritanceCalculatorState extends State<InheritanceCalculator> {
-      String apiUrl = 'http://127.0.0.1:8000/calculate-inheritance';
-      
-      //String apiUrl = 'https://inheritance-backend-437307451072.us-west1.run.app/calculate-inheritance';
+      //String apiUrl = 'http://127.0.0.1:8000/calculate-inheritance';
+      String apiUrl = 'https://inheritance-backend-437307451072.us-west1.run.app/calculate-inheritance';
       String result = '';
 
       Future<void> calculateInheritance() async {
