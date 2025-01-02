@@ -1,0 +1,194 @@
+### DevOps Guide for Inheritance Distribution Project
+
+This guide is divided into two sections:
+1. **Commands to Start a Project from Scratch**
+2. **Commands for Testing Locally and Deploying Updates**
+
+---
+
+## 1. Commands to Start a Project from Scratch
+
+### Step 1: Install Prerequisites
+Run the following commands to ensure all necessary tools are installed:
+
+#### Install Git
+```bash
+brew install git
+```
+
+#### Install Python (3.8 or higher)
+```bash
+brew install python
+```
+
+#### Install Pip
+```bash
+python3 -m ensurepip --upgrade
+```
+
+#### Install FastAPI and Dependencies
+```bash
+pip install fastapi uvicorn pydantic python-dotenv
+```
+
+#### Install Docker
+[Download and Install Docker Desktop](https://www.docker.com/products/docker-desktop/).
+Verify installation:
+```bash
+docker --version
+```
+
+#### Install Flutter and Dart SDK
+```bash
+brew install --cask flutter
+flutter doctor
+```
+
+#### Install Firebase CLI
+```bash
+npm install -g firebase-tools
+firebase --version
+```
+
+---
+
+### Step 2: Set Up the Backend
+1. Create project structure:
+    ```bash
+    mkdir inheritance-distribution
+    cd inheritance-distribution
+    mkdir backend
+    cd backend
+    mkdir app
+    touch app/main.py app/models.py app/routes.py app/calculations.py
+    ```
+
+2. Initialize Python virtual environment:
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+
+3. Install Python dependencies:
+    ```bash
+    pip install fastapi uvicorn pydantic python-dotenv
+    ```
+
+4. Run the backend server:
+    ```bash
+    uvicorn app.main:app --reload
+    ```
+
+---
+
+### Step 3: Set Up the Frontend
+1. Navigate to the frontend directory:
+    ```bash
+    mkdir ../frontend
+    cd ../frontend
+    flutter create .
+    ```
+
+2. Install Flutter dependencies:
+    ```bash
+    flutter pub get
+    ```
+
+3. Run the frontend locally:
+    ```bash
+    flutter run -d chrome
+    ```
+
+---
+
+### Step 4: Initialize Firebase Hosting
+1. Log in to Firebase:
+    ```bash
+    firebase login
+    ```
+
+2. Initialize Firebase Hosting:
+    ```bash
+    firebase init hosting
+    ```
+
+3. Deploy the frontend:
+    ```bash
+    flutter build web
+    firebase deploy
+    ```
+
+---
+
+## 2. Commands for Testing Locally and Deploying Updates
+
+### Step 1: Test Backend Locally
+1. Navigate to the backend directory:
+    ```bash
+    cd backend
+    source venv/bin/activate
+    ```
+
+2. Run the backend server:
+    ```bash
+    uvicorn app.main:app --reload
+    ```
+
+3. Test the API locally using curl or Postman:
+    ```bash
+    curl -X POST http://127.0.0.1:8000/calculate-inheritance \
+    -H "Content-Type: application/json" \
+    -d '{"total_value": 100000, "heirs": [{"name": "Alice", "relation": "spouse"}, {"name": "Bob", "relation": "child"}]}'
+    ```
+
+---
+
+### Step 2: Test Frontend Locally
+1. Navigate to the frontend directory:
+    ```bash
+    cd ../frontend
+    ```
+
+2. Run the Flutter app in the browser:
+    ```bash
+    flutter run -d chrome
+    ```
+
+---
+
+### Step 3: Deploy Backend to Google Cloud Run
+1. Build the Docker image:
+    ```bash
+    docker build -t gcr.io/inheritance-distribution/inheritance-backend .
+    ```
+
+2. Push the Docker image:
+    ```bash
+    docker push gcr.io/<your-project-id>/inheritance-backend
+    ```
+
+3. Deploy to Google Cloud Run:
+    ```bash
+    gcloud run deploy inheritance-backend \
+      --image gcr.io/<your-project-id>/inheritance-backend \
+      --platform managed \
+      --region us-west1 \
+      --allow-unauthenticated
+    ```
+
+---
+
+### Step 4: Deploy Frontend to Firebase Hosting
+1. Build the Flutter web app:
+    ```bash
+    flutter build web
+    ```
+
+2. Deploy the app to Firebase:
+    ```bash
+    firebase deploy
+    ```
+
+---
+
+This guide ensures all necessary steps are covered for setting up, testing, and deploying the project from scratch, as well as updating and deploying changes.

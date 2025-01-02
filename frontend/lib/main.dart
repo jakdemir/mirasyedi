@@ -21,14 +21,21 @@ class FamilyTreePage extends StatefulWidget {
 }
 
 class _FamilyTreePageState extends State<FamilyTreePage> {
+  // Uncomment for local testing
   //final String apiUrl = 'http://127.0.0.1:8000/calculate-inheritance';
   final String apiUrl = 'https://inheritance-backend-437307451072.us-west1.run.app/calculate-inheritance';
-  List<Map<String, String>> familyMembers = [];
+
+  List<Map<String, dynamic>> familyMembers = [];
   String result = '';
+  String newName = '';
+  String newRelation = 'child';
 
   void _addFamilyMember() {
+    if (newName.isEmpty) return;
+
     setState(() {
-      familyMembers.add({'name': 'New Member', 'relation': 'child'});
+      familyMembers.add({'name': newName, 'relation': newRelation});
+      newName = '';
     });
   }
 
@@ -64,11 +71,44 @@ class _FamilyTreePageState extends State<FamilyTreePage> {
               itemCount: familyMembers.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                  title: Text(familyMembers[index]['name'] ?? ''),
-                  subtitle: Text(familyMembers[index]['relation'] ?? ''),
+                  title: Text(familyMembers[index]['name']),
+                  subtitle: Text(familyMembers[index]['relation']),
                 );
               },
             ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: InputDecoration(labelText: 'Enter Name'),
+              onChanged: (value) {
+                setState(() {
+                  newName = value;
+                });
+              },
+            ),
+          ),
+          DropdownButton<String>(
+            value: newRelation,
+            items: [
+              'spouse',
+              'child',
+              'parent',
+              'grandparent',
+              'uncle/aunt',
+              'sibling',
+              'cousin',
+            ].map((relation) {
+              return DropdownMenuItem<String>(
+                value: relation,
+                child: Text(relation),
+              );
+            }).toList(),
+            onChanged: (value) {
+              setState(() {
+                newRelation = value!;
+              });
+            },
           ),
           ElevatedButton(
             onPressed: _addFamilyMember,
@@ -78,7 +118,10 @@ class _FamilyTreePageState extends State<FamilyTreePage> {
             onPressed: _calculateInheritance,
             child: Text('Calculate Inheritance'),
           ),
-          Text(result),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(result),
+          ),
         ],
       ),
     );
