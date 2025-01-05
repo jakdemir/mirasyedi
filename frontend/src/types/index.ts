@@ -1,52 +1,39 @@
-export enum RelationType {
-    SPOUSE = 'spouse',
-    CHILD = 'child',
-    PARENT = 'parent',
-    GRANDPARENT = 'grandparent'
+export interface MarriageInfo {
+    marriage_order: number;
+    is_current: boolean;
 }
 
-export enum FamilyBranch {
-    DIRECT = 'direct',
-    MATERNAL = 'maternal',
-    PATERNAL = 'paternal'
-}
-
-export enum ParentType {
-    MOTHER = 'mother',
-    FATHER = 'father'
-}
-
-export interface Heir {
-    id?: string;
+export interface Person {
+    id: string;
     name: string;
-    relation: RelationType;
     is_alive: boolean;
-    share?: number;
-    children?: Heir[];
-    branch?: FamilyBranch;
-    parent_type?: ParentType;
+    parent_id?: string;
+    marriage_info?: MarriageInfo;
+    share: number;
 }
 
-export interface FamilyTree {
-    spouse?: Heir;
-    children?: Heir[];
-    mother?: Heir;
-    father?: Heir;
-    maternal_grandparents?: Heir[];
-    paternal_grandparents?: Heir[];
+export interface FamilyNode {
+    person: Person;
+    spouse?: Person;
+    children: FamilyNode[];
+    parents?: Record<'mother' | 'father', FamilyNode | null>;
 }
 
-export interface Estate {
-    total_value: number;
-    family_tree: FamilyTree;
+export interface InheritanceRequest {
+    estate_value: number;
+    family_tree: FamilyNode;
 }
 
-export interface InheritanceResult {
-    estate: Estate;
-    error?: string;
+export interface InheritanceResponse {
+    total_distributed: number;
+    shares: Record<string, number>;
 }
 
-export interface ApiResponse<T> {
-    data: T;
-    error?: string;
+export interface FamilyTreeFormData {
+    name: string;
+    is_alive: boolean;
+    relation: 'spouse' | 'child' | 'parent' | null;
+    parent_id?: string;
+    marriage_order?: number;
+    is_current_marriage?: boolean;
 } 

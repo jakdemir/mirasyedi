@@ -1,255 +1,339 @@
-from typing import List, Dict
-from app.models import Estate, Heir, RelationType, FamilyBranch, FamilyTree
-def calculate_inheritance_shares(estate: Estate) -> Estate:
-    """Calculate inheritance shares for all heirs in the estate."""
-    total_value = estate.total_value
-    family_tree = estate.family_tree
-    spouse_share = 0
+from typing import Dict, List, Optional
+from .models import Estate, FamilyTree, FamilyNode, Person, ParentType
 
-    # Calculate spouse's share
-    if family_tree.spouse:
-        if family_tree.spouse.is_alive:
-            # Check for first degree relatives (children or parents)
-            has_first_degree = (
-                any(child.is_alive for child in family_tree.children) or
-                (family_tree.mother and family_tree.mother.is_alive) or
-                (family_tree.father and family_tree.father.is_alive)
-            )
-            
-            # Check for second degree relatives (grandchildren)
-            has_second_degree = any(
-                grandchild.is_alive 
-                for child in family_tree.children if not child.is_alive
-                for grandchild in child.children
-            )
-            
-            # Check for third degree relatives (great-grandchildren)
-            has_third_degree = any(
-                great_grandchild.is_alive
-                for child in family_tree.children if not child.is_alive
-                for grandchild in child.children if not grandchild.is_alive
-                for great_grandchild in grandchild.children
-            )
+class InheritanceResult:
+    def __init__(self):
+        self.total_distributed: float = 0
 
-            if has_first_degree:
-                spouse_share = total_value * 0.25  # 1/4 if first degree relatives exist
-            elif has_second_degree:
-                spouse_share = total_value * 0.5   # 1/2 if second degree relatives exist
-            elif has_third_degree:
-                spouse_share = total_value * 0.75  # 3/4 if third degree relatives exist
+class InheritanceCalculator:
+    def __init__(self, estate: Estate):
+        self.estate = estate
+        self.family_tree = estate.family_tree
+        self.total_value = estate.total_value
+        self.result = InheritanceResult()
+
+    def calculate(self) -> InheritanceResult:
+        """Calculate inheritance shares for all heirs"""
+        root = self.family_tree.root
+        
+        # Reset all shares
+        self._reset_shares(root)
+        
+        # Determine inheritance degree and distribute accordingly
+        if self._has_first_degree_heirs(root):
+            self._distribute_first_degree(root)
+        elif self._has_second_degree_heirs(root):
+            self._distribute_second_degree(root)
+        elif self._has_third_degree_heirs(root):
+            self._distribute_third_degree(root)
+        else:
+            # If no heirs except spouse, spouse gets everything
+            if root.spouse and root.spouse.is_alive:
+                root.spouse.share = self.total_value
+                self.result.total_distributed = self.total_value
+        
+        return self.result
+
+    def _reset_shares(self, node: FamilyNode):
+        """Reset all shares to 0"""
+        if node.person:
+            node.person.share = 0
+        if node.spouse:
+            node.spouse.share = 0
+        for child in node.children:
+            self._reset_shares(child)
+        if node.parents:
+            for parent in node.parents.values():
+                if parent:
+                    self._reset_shares(parent)
+
+    def _has_first_degree_heirs(self, root: FamilyNode) -> bool:
+        """Check if there are any living children or their descendants"""
+        return any(self._has_living_descendants(child) for child in root.children)
+
+    def _has_second_degree_heirs(self, root: FamilyNode) -> bool:
+        """Check if there are any living parents or siblings"""
+        if not root.parents:
+            return False
+        
+        for parent_node in root.parents.values():
+            if parent_node:
+                if parent_node.person and parent_node.person.is_alive:
+                    return True
+                for sibling in parent_node.children:
+                    if sibling.person.id != root.person.id and self._has_living_descendants(sibling):
+                        return True
+        return False
+
+    def _has_third_degree_heirs(self, root: FamilyNode) -> bool:
+        """Check if there are any living grandparents or uncles/aunts"""
+        if not root.parents:
+            return False
+
+        for parent_node in root.parents.values():
+            if not parent_node or not parent_node.parents:
+                continue
+            
+            for grandparent in parent_node.parents.values():
+                if grandparent:
+                    if grandparent.person and grandparent.person.is_alive:
+                        return True
+                    # Only check for living uncles/aunts, not their descendants
+                    for uncle in grandparent.children:
+                        if (uncle.person and uncle.person.is_alive and 
+                            uncle.person.id != parent_node.person.id):
+                            return True
+        return False
+
+    def _has_living_descendants(self, node: FamilyNode) -> bool:
+        """Check if a node has any living descendants"""
+        if node.person and node.person.is_alive:
+            return True
+        return any(self._has_living_descendants(child) for child in node.children)
+
+    def _distribute_first_degree(self, root: FamilyNode):
+        """Distribute inheritance to first degree heirs (spouse and children)"""
+        spouse_share = 0.25 if root.spouse and root.spouse.is_alive else 0
+
+        if spouse_share > 0:
+            root.spouse.share = round(self.total_value * spouse_share)
+            self.result.total_distributed += root.spouse.share
+
+        remaining_amount = self.total_value - self.result.total_distributed
+
+        # Get all valid branches (living children or deceased with heirs)
+        valid_branches = []
+        for child in root.children:
+            if child.person.is_alive:
+                valid_branches.append(child)
+            elif self._has_living_descendants(child):
+                valid_branches.append(child)
+
+        if valid_branches:
+            share_per_branch = remaining_amount / len(valid_branches)
+            total_distributed = 0
+
+            for i, branch in enumerate(valid_branches):
+                # Last branch gets the remainder to ensure total is exact
+                if i == len(valid_branches) - 1:
+                    branch_amount = remaining_amount - total_distributed
+                else:
+                    branch_amount = round(share_per_branch)
+                    total_distributed += branch_amount
+
+                if branch.person.is_alive:
+                    branch.person.share = branch_amount
+                    self.result.total_distributed += branch_amount
+                else:
+                    self._distribute_to_children(branch.children, branch_amount)
+
+    def _distribute_to_children(self, children: List[FamilyNode], amount: float):
+        """Distribute amount equally among children or their descendants"""
+        valid_children = []
+        for child in children:
+            if child.person.is_alive:
+                valid_children.append(child)
+            elif self._has_living_descendants(child):
+                valid_children.append(child)
+
+        if not valid_children:
+            return
+
+        share_per_child = amount / len(valid_children)
+        total_distributed = 0
+
+        for i, child in enumerate(valid_children):
+            # Last child gets the remainder to ensure total is exact
+            if i == len(valid_children) - 1:
+                child_amount = amount - total_distributed
             else:
-                spouse_share = total_value  # Full estate if no qualifying relatives
+                child_amount = round(share_per_child)
+                total_distributed += child_amount
 
-            family_tree.spouse.share = round(spouse_share, 2)
-        elif family_tree.spouse.children:
-            # Handle deceased spouse's children
-            spouse_share = total_value * 0.25  # Deceased spouse's share is 1/4
-            distribute_to_children(family_tree.spouse.children, spouse_share)
+            if child.person.is_alive:
+                child.person.share = child_amount
+                self.result.total_distributed += child_amount
+            else:
+                self._distribute_to_children(child.children, child_amount)
 
-    # If there are children, distribute among them
-    if family_tree.children:
-        distribute_to_children(family_tree.children, total_value - spouse_share)
-    # If no children, check for parents
-    elif family_tree.mother or family_tree.father:
-        distribute_to_parents(family_tree, total_value, spouse_share)
-    # If no parents, distribute among grandparents
-    elif family_tree.maternal_grandparents or family_tree.paternal_grandparents:
-        distribute_to_grandparents(family_tree, total_value - spouse_share)
+    def _distribute_second_degree(self, root: FamilyNode):
+        """Distribute inheritance to second degree heirs (spouse, parents, siblings)"""
+        spouse_share = 0.5 if root.spouse and root.spouse.is_alive else 0
 
-    return estate
+        if spouse_share > 0:
+            root.spouse.share = round(self.total_value * spouse_share)
+            self.result.total_distributed += root.spouse.share
 
-def distribute_to_children(children: List[Heir], total_value: float) -> None:
-    """Distribute inheritance among children and their descendants."""
-    # Count valid branches (living children or deceased children with descendants)
-    valid_branches = [child for child in children if child.is_alive or (not child.is_alive and child.children)]
-    if not valid_branches:
-        return
+        remaining_amount = self.total_value - self.result.total_distributed
+        maternal_amount = remaining_amount / 2
+        paternal_amount = remaining_amount - round(maternal_amount, 2)
 
-    # Calculate share per branch
-    share_per_branch = total_value / len(valid_branches)
-    
-    # Distribute within each branch
-    for child in valid_branches:
-        if child.is_alive:
-            # Living child gets full branch share
-            child.share = round(share_per_branch, 2)
-        elif child.children:
-            # Handle deceased child's branch
-            valid_grandchildren = []
-            for grandchild in child.children:
-                if grandchild.is_alive:
-                    valid_grandchildren.append((grandchild, [grandchild]))
-                elif grandchild.children:
-                    # If grandchild is deceased, include their branch
-                    living_descendants = []
-                    for great_grandchild in grandchild.children:
-                        if great_grandchild.is_alive:
-                            living_descendants.append(great_grandchild)
-                        elif great_grandchild.children:
-                            # Include living great-great-grandchildren
-                            living_descendants.extend([ggc for ggc in great_grandchild.children if ggc.is_alive])
-                    if living_descendants:
-                        valid_grandchildren.append((grandchild, living_descendants))
-            
-            if not valid_grandchildren:
-                continue
-            
-            # Calculate share per grandchild's branch
-            share_per_grandchild = share_per_branch / len(valid_grandchildren)
-            
-            # Distribute within each grandchild's branch
-            for grandchild, living_descendants in valid_grandchildren:
-                if grandchild.is_alive:
-                    grandchild.share = round(share_per_grandchild, 2)
+        # Distribute maternal side
+        if root.parents.get(ParentType.MOTHER):
+            self._distribute_parent_share(
+                root.parents[ParentType.MOTHER],
+                root.person.id,
+                round(maternal_amount, 2)
+            )
+
+        # Distribute paternal side
+        if root.parents.get(ParentType.FATHER):
+            self._distribute_parent_share(
+                root.parents[ParentType.FATHER],
+                root.person.id,
+                paternal_amount
+            )
+
+    def _distribute_parent_share(self, parent_node: FamilyNode, deceased_id: str, amount: float):
+        """Distribute a parent's share to them or their descendants"""
+        if parent_node.person and parent_node.person.is_alive:
+            parent_node.person.share = amount
+            self.result.total_distributed += amount
+            return
+
+        # Get valid siblings (excluding deceased)
+        valid_siblings = []
+        for child in parent_node.children:
+            if child.person.id != deceased_id:
+                if child.person.is_alive:
+                    valid_siblings.append(child)
+                elif self._has_living_descendants(child):
+                    valid_siblings.append(child)
+
+        if not valid_siblings:
+            return
+
+        share_per_sibling = amount / len(valid_siblings)
+        total_distributed = 0
+
+        for i, sibling in enumerate(valid_siblings):
+            # Last sibling gets the remainder to ensure total is exact
+            if i == len(valid_siblings) - 1:
+                sibling_amount = amount - total_distributed
+            else:
+                sibling_amount = round(share_per_sibling, 2)
+                total_distributed += sibling_amount
+
+            if sibling.person.is_alive:
+                sibling.person.share = sibling_amount
+                self.result.total_distributed += sibling_amount
+            else:
+                self._distribute_to_children(sibling.children, sibling_amount)
+
+    def _distribute_third_degree(self, root: FamilyNode):
+        """Distribute inheritance to third degree heirs (spouse, grandparents, uncles/aunts)"""
+        spouse_share = 0.75 if root.spouse and root.spouse.is_alive else 0
+
+        if spouse_share > 0:
+            root.spouse.share = round(self.total_value * spouse_share)
+            self.result.total_distributed += root.spouse.share
+
+        remaining_amount = self.total_value - self.result.total_distributed
+
+        # Count living sides
+        maternal_side = root.parents and root.parents.get(ParentType.MOTHER)
+        paternal_side = root.parents and root.parents.get(ParentType.FATHER)
+
+        if maternal_side and paternal_side:
+            # Both sides exist, split remaining amount
+            maternal_amount = remaining_amount / 2
+            paternal_amount = remaining_amount - round(maternal_amount)
+
+            # Distribute maternal side
+            self._distribute_grandparents_share(root.parents[ParentType.MOTHER], round(maternal_amount))
+
+            # Distribute paternal side
+            self._distribute_grandparents_share(root.parents[ParentType.FATHER], paternal_amount)
+        elif maternal_side:
+            # Only maternal side exists, give all remaining amount
+            self._distribute_grandparents_share(root.parents[ParentType.MOTHER], remaining_amount)
+        elif paternal_side:
+            # Only paternal side exists, give all remaining amount
+            self._distribute_grandparents_share(root.parents[ParentType.FATHER], remaining_amount)
+
+    def _distribute_grandparents_share(self, parent_node: FamilyNode, amount: float):
+        """Distribute a side's share among grandparents or their children (uncles/aunts)"""
+        if not parent_node.parents:
+            return
+
+        grandmother = parent_node.parents.get(ParentType.MOTHER)
+        grandfather = parent_node.parents.get(ParentType.FATHER)
+
+        # Count living grandparents
+        living_grandparents = []
+        if grandmother and grandmother.person and grandmother.person.is_alive:
+            living_grandparents.append(grandmother)
+        if grandfather and grandfather.person and grandfather.person.is_alive:
+            living_grandparents.append(grandfather)
+
+        # Count living uncles/aunts
+        living_uncles = []
+        for grandparent in [grandmother, grandfather]:
+            if grandparent:
+                for uncle in grandparent.children:
+                    if (uncle.person and uncle.person.is_alive and 
+                        uncle.person.id != parent_node.person.id):
+                        living_uncles.append(uncle)
+
+        if living_grandparents and living_uncles:
+            # Split amount between grandparents and uncles/aunts
+            grandparent_share = amount / 2
+            uncle_share = amount - round(grandparent_share)
+
+            # Distribute grandparent share
+            share_per_grandparent = grandparent_share / len(living_grandparents)
+            total_distributed = 0
+
+            for i, grandparent in enumerate(living_grandparents):
+                if i == len(living_grandparents) - 1:
+                    share = round(grandparent_share) - total_distributed
                 else:
-                    # Group descendants by their parent
-                    descendant_groups = {}
-                    for descendant in living_descendants:
-                        parent_id = descendant.id.rsplit('c', 1)[0]
-                        if parent_id not in descendant_groups:
-                            descendant_groups[parent_id] = []
-                        descendant_groups[parent_id].append(descendant)
-                    
-                    # Calculate share per group
-                    share_per_group = share_per_grandchild / len(descendant_groups)
-                    
-                    # Distribute within each group
-                    for group in descendant_groups.values():
-                        share_per_descendant = share_per_group / len(group)
-                        for descendant in group:
-                            descendant.share = round(share_per_descendant, 2)
+                    share = round(share_per_grandparent)
+                    total_distributed += share
 
-def distribute_to_parents(family_tree: FamilyTree, total_value: float, spouse_share: float = 0) -> None:
-    """Distribute inheritance among parents."""
-    living_parents = []
-    if family_tree.mother and family_tree.mother.is_alive:
-        living_parents.append(family_tree.mother)
-    if family_tree.father and family_tree.father.is_alive:
-        living_parents.append(family_tree.father)
+                grandparent.person.share = share
+                self.result.total_distributed += share
 
-    remaining_value = total_value - spouse_share
+            # Distribute uncle share
+            share_per_uncle = uncle_share / len(living_uncles)
+            total_distributed = 0
 
-    # If both parents are alive, split equally
-    if len(living_parents) == 2:
-        share_per_parent = remaining_value / 2
-        family_tree.mother.share = round(share_per_parent, 2)
-        family_tree.father.share = round(share_per_parent, 2)
-    # If one parent is alive
-    elif len(living_parents) == 1:
-        living_parent = living_parents[0]
-        # Living parent gets 1/6 of total estate
-        living_parent.share = round(total_value / 6, 2)  # Always 1/6 regardless of spouse
-
-        # Calculate remaining value after spouse and living parent shares
-        remaining_value = total_value - spouse_share - living_parent.share
-
-        # Distribute remaining to deceased parent's children if any
-        if living_parent == family_tree.mother and family_tree.father and family_tree.father.children:
-            distribute_to_children(family_tree.father.children, remaining_value)
-        elif living_parent == family_tree.father and family_tree.mother and family_tree.mother.children:
-            distribute_to_children(family_tree.mother.children, remaining_value)
-    # If both parents are deceased, distribute to their children
-    else:
-        # Split between maternal and paternal branches
-        maternal_value = remaining_value / 2
-        paternal_value = remaining_value / 2
-
-        # Distribute mother's share to her children if she has any
-        if family_tree.mother and family_tree.mother.children:
-            distribute_to_children(family_tree.mother.children, maternal_value)
-
-        # Distribute father's share to his children if he has any
-        if family_tree.father and family_tree.father.children:
-            distribute_to_children(family_tree.father.children, paternal_value)
-
-def distribute_to_grandparents(family_tree: FamilyTree, total_value: float) -> None:
-    """Distribute inheritance among grandparents and their descendants."""
-    maternal_value = total_value / 2
-    paternal_value = total_value / 2
-
-    # Process maternal side
-    if family_tree.maternal_grandparents:
-        distribute_to_grandparent_branch(family_tree.maternal_grandparents, maternal_value)
-
-    # Process paternal side
-    if family_tree.paternal_grandparents:
-        distribute_to_grandparent_branch(family_tree.paternal_grandparents, paternal_value)
-
-def distribute_to_grandparent_branch(grandparents: List[Heir], total_value: float) -> None:
-    """Distribute inheritance within a grandparent branch (maternal or paternal)."""
-    # Count living grandparents and deceased grandparents with children
-    valid_grandparents = [gp for gp in grandparents if gp.is_alive or (not gp.is_alive and gp.children)]
-    if not valid_grandparents:
-        return
-    
-    # Calculate share per grandparent
-    share_per_grandparent = total_value / len(valid_grandparents)
-    
-    for grandparent in valid_grandparents:
-        if grandparent.is_alive:
-            grandparent.share = share_per_grandparent
-        elif grandparent.children:
-            # Get living descendants grouped by generation
-            living_descendants = get_living_descendants_by_generation(grandparent)
-            if not living_descendants:
-                continue
-            
-            # Group descendants by generation
-            generations = group_by_generation(living_descendants)
-            current_share = share_per_grandparent
-            current_generation = min(generations.keys())
-            
-            # Distribute shares within the branch
-            while current_generation in generations:
-                gen_heirs = generations[current_generation]
-                share_per_heir = current_share / len(gen_heirs)
-                
-                # First pass: distribute to living heirs
-                living_heirs = [h for h in gen_heirs if h.is_alive]
-                deceased_with_children = [h for h in gen_heirs if not h.is_alive and h.children]
-                
-                if living_heirs:
-                    for heir in living_heirs:
-                        heir.share = share_per_heir
-                    
-                    # If there are deceased heirs with children, their shares pass down
-                    if deceased_with_children:
-                        remaining_share = share_per_heir * len(deceased_with_children)
-                        current_share = remaining_share
-                        current_generation += 1
-                    else:
-                        # If no deceased heirs have children, redistribute their shares
-                        deceased_share = share_per_heir * (len(gen_heirs) - len(living_heirs))
-                        additional_share = deceased_share / len(living_heirs)
-                        for heir in living_heirs:
-                            heir.share += additional_share
-                        break
+            for i, uncle in enumerate(living_uncles):
+                if i == len(living_uncles) - 1:
+                    share = uncle_share - total_distributed
                 else:
-                    # All heirs in this generation are deceased, pass full share to next generation
-                    current_generation += 1
+                    share = round(share_per_uncle)
+                    total_distributed += share
 
-def get_living_descendants_by_generation(heir: Heir) -> List[Heir]:
-    """Get all living descendants of an heir, maintaining generation information."""
-    descendants = []
-    
-    def collect_descendants(current_heir: Heir, generation: int) -> None:
-        if current_heir.children:
-            for child in current_heir.children:
-                child.generation = generation
-                if child.is_alive or child.children:  # Include deceased heirs with children
-                    descendants.append(child)
-                collect_descendants(child, generation + 1)
-    
-    collect_descendants(heir, 1)
-    return descendants
+                uncle.person.share = share
+                self.result.total_distributed += share
 
-def group_by_generation(heirs: List[Heir]) -> Dict[int, List[Heir]]:
-    """Group heirs by their generation level."""
-    generations: Dict[int, List[Heir]] = {}
-    for heir in heirs:
-        generation = getattr(heir, 'generation', 1)
-        if generation not in generations:
-            generations[generation] = []
-        generations[generation].append(heir)
-    return generations
+        elif living_grandparents:
+            # Only living grandparents get the share
+            share_per_grandparent = amount / len(living_grandparents)
+            total_distributed = 0
 
+            for i, grandparent in enumerate(living_grandparents):
+                if i == len(living_grandparents) - 1:
+                    share = amount - total_distributed
+                else:
+                    share = round(share_per_grandparent)
+                    total_distributed += share
+
+                grandparent.person.share = share
+                self.result.total_distributed += share
+
+        elif living_uncles:
+            # Only living uncles/aunts get the share
+            share_per_uncle = amount / len(living_uncles)
+            total_distributed = 0
+
+            for i, uncle in enumerate(living_uncles):
+                if i == len(living_uncles) - 1:
+                    share = amount - total_distributed
+                else:
+                    share = round(share_per_uncle)
+                    total_distributed += share
+
+                uncle.person.share = share
+                self.result.total_distributed += share 
