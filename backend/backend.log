@@ -1,0 +1,2834 @@
+2025-01-05 12:40:27,102 - INFO - Request 1736070027102: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 12:40:27,103 - INFO - Request 1736070027102 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '293', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 12:40:27,110 - INFO - Response 1736070027102: Status 200
+2025-01-05 12:40:27,110 - INFO - Response 1736070027102: Completed in 0.008s
+2025-01-05 12:41:31,579 - INFO - Request 1736070091579: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 12:41:31,580 - INFO - Request 1736070091579 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '116', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 12:41:31,582 - INFO - Response 1736070091579: Status 200
+2025-01-05 12:41:31,583 - INFO - Response 1736070091579: Completed in 0.003s
+2025-01-05 12:43:16,255 - INFO - Request 1736070196255: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 12:43:16,255 - INFO - Request 1736070196255 Headers: {'host': '127.0.0.1:8000', 'user-agent': 'curl/8.7.1', 'accept': '*/*', 'content-type': 'application/json', 'content-length': '128'}
+2025-01-05 12:43:16,255 - INFO - Request 1736070196255 Body: {
+  "total_value": 1000,
+  "heirs": [
+    {
+      "name": "John",
+      "relation": "spouse",
+      "is_alive": true
+    }
+  ]
+}
+2025-01-05 12:43:16,258 - INFO - Response 1736070196255: Status 200
+2025-01-05 12:43:16,258 - INFO - Response 1736070196255: Completed in 0.003s
+2025-01-05 12:44:12,412 - INFO - Request 1736070252412: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 12:44:12,412 - INFO - Request 1736070252412 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '115', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 12:44:12,412 - INFO - Request 1736070252412 Body: {"total_value":1000,"heirs":[{"name":"va","relation":"child","is_alive":true,"side":null,"children":[],"share":0}]}
+2025-01-05 12:44:12,415 - INFO - Response 1736070252412: Status 200
+2025-01-05 12:44:12,415 - INFO - Response 1736070252412: Completed in 0.003s
+2025-01-05 12:46:23,623 - INFO - Request 1736070383623: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 12:46:23,624 - INFO - Request 1736070383623 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '116', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 12:46:23,624 - INFO - Request 1736070383623 Body: {"total_value":1000,"heirs":[{"name":"asd","relation":"child","is_alive":true,"side":null,"children":[],"share":0}]}
+2025-01-05 12:46:23,628 - INFO - Response 1736070383623: Status 200
+2025-01-05 12:46:23,628 - INFO - Response 1736070383623 Body: {
+  "total_value": 1000.0,
+  "heirs": [
+    {
+      "name": "asd",
+      "relation": "child",
+      "is_alive": true,
+      "share": 1000.0,
+      "children": [],
+      "side": null,
+      "parent": null
+    }
+  ]
+}
+2025-01-05 12:46:23,628 - INFO - Response 1736070383623: Completed in 0.005s
+2025-01-05 12:49:42,257 - INFO - Request 1736070582257: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 12:49:42,257 - INFO - Request 1736070582257 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '472', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 12:49:42,257 - INFO - Request 1736070582257 Body: {"total_value":1000,"heirs":[{"name":"marin","relation":"spouse","is_alive":true,"side":null,"children":[],"share":0},{"name":"hatun","relation":"parent","is_alive":true,"side":null,"children":[],"share":0},{"name":"abdul","relation":"parent","is_alive":false,"side":null,"children":[{"name":"fehmi","relation":"child","is_alive":true,"side":null,"children":[],"share":0},{"name":"john","relation":"child","is_alive":true,"side":null,"children":[],"share":0}],"share":0}]}
+2025-01-05 12:49:42,259 - INFO - Response 1736070582257: Status 200
+2025-01-05 12:49:42,260 - INFO - Response 1736070582257 Body: {
+  "total_value": 1000.0,
+  "heirs": [
+    {
+      "name": "marin",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 500.0,
+      "children": [],
+      "side": null,
+      "parent": null
+    },
+    {
+      "name": "hatun",
+      "relation": "parent",
+      "is_alive": true,
+      "share": 250.0,
+      "children": [],
+      "side": null,
+      "parent": null
+    },
+    {
+      "name": "fehmi",
+      "relation": "child",
+      "is_alive": true,
+      "share": 125.0,
+      "children": [],
+      "side": null,
+      "parent": null
+    },
+    {
+      "name": "john",
+      "relation": "child",
+      "is_alive": true,
+      "share": 125.0,
+      "children": [],
+      "side": null,
+      "parent": null
+    }
+  ]
+}
+2025-01-05 12:49:42,260 - INFO - Response 1736070582257: Completed in 0.003s
+2025-01-05 14:04:54,049 - INFO - Request 1736075094049: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:04:54,050 - INFO - Request 1736075094049 Headers: {'host': '127.0.0.1:8000', 'user-agent': 'curl/8.7.1', 'accept': '*/*', 'content-type': 'application/json', 'content-length': '155'}
+2025-01-05 14:04:54,050 - INFO - Request 1736075094049 Body: {
+     "total_value": 1000,
+     "heirs": [
+       {
+         "name": "John",
+         "relation": "spouse",
+         "is_alive": true
+       }
+     ]
+   }
+2025-01-05 14:04:54,055 - INFO - Response 1736075094049: Status 422
+2025-01-05 14:04:54,056 - INFO - Response 1736075094049 Body: {
+  "detail": [
+    {
+      "type": "missing",
+      "loc": [
+        "body",
+        "family_tree"
+      ],
+      "msg": "Field required",
+      "input": {
+        "total_value": 1000,
+        "heirs": [
+          {
+            "name": "John",
+            "relation": "spouse",
+            "is_alive": true
+          }
+        ]
+      }
+    }
+  ]
+}
+2025-01-05 14:04:54,057 - INFO - Response 1736075094049: Completed in 0.006s
+2025-01-05 14:06:43,110 - INFO - Request 1736075203110: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:06:43,111 - INFO - Request 1736075203110 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '293', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:06:43,111 - INFO - Request 1736075203110 Body: {"total_value":1000,"heirs":[{"name":"jak","relation":"child","is_alive":true,"side":null,"children":[],"share":0},{"name":"marin","relation":"spouse","is_alive":true,"side":null,"children":[],"share":0},{"name":"celil","relation":"child","is_alive":true,"side":null,"children":[],"share":0}]}
+2025-01-05 14:06:43,112 - INFO - Response 1736075203110: Status 422
+2025-01-05 14:06:43,113 - INFO - Response 1736075203110 Body: {
+  "detail": [
+    {
+      "type": "missing",
+      "loc": [
+        "body",
+        "family_tree"
+      ],
+      "msg": "Field required",
+      "input": {
+        "total_value": 1000,
+        "heirs": [
+          {
+            "name": "jak",
+            "relation": "child",
+            "is_alive": true,
+            "side": null,
+            "children": [],
+            "share": 0
+          },
+          {
+            "name": "marin",
+            "relation": "spouse",
+            "is_alive": true,
+            "side": null,
+            "children": [],
+            "share": 0
+          },
+          {
+            "name": "celil",
+            "relation": "child",
+            "is_alive": true,
+            "side": null,
+            "children": [],
+            "share": 0
+          }
+        ]
+      }
+    }
+  ]
+}
+2025-01-05 14:06:43,113 - INFO - Response 1736075203110: Completed in 0.002s
+2025-01-05 14:10:16,973 - INFO - Request 1736075416973: POST http://127.0.0.1:8000/api/calculate
+2025-01-05 14:10:16,973 - INFO - Request 1736075416973 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '218', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:10:16,973 - INFO - Request 1736075416973 Body: {"total_value":1000,"family_tree":{"children":[{"name":"celil","relation":"child","is_alive":true,"side":null,"children":[],"share":0,"id":"celil-1736075416965"}],"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 14:10:16,974 - INFO - Response 1736075416973: Status 404
+2025-01-05 14:10:16,974 - INFO - Response 1736075416973 Body: {
+  "detail": "Not Found"
+}
+2025-01-05 14:10:16,974 - INFO - Response 1736075416973: Completed in 0.001s
+2025-01-05 14:10:28,561 - INFO - Request 1736075428561: POST http://127.0.0.1:8000/api/calculate
+2025-01-05 14:10:28,562 - INFO - Request 1736075428561 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '210', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:10:28,562 - INFO - Request 1736075428561 Body: {"total_value":1000,"family_tree":{"children":[{"name":"c","relation":"child","is_alive":true,"side":null,"children":[],"share":0,"id":"c-1736075428547"}],"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 14:10:28,563 - INFO - Response 1736075428561: Status 404
+2025-01-05 14:10:28,563 - INFO - Response 1736075428561 Body: {
+  "detail": "Not Found"
+}
+2025-01-05 14:10:28,563 - INFO - Response 1736075428561: Completed in 0.001s
+2025-01-05 14:11:25,961 - INFO - Request 1736075485961: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:11:25,961 - INFO - Request 1736075485961 Headers: {'host': '127.0.0.1:8000', 'user-agent': 'curl/8.7.1', 'accept': '*/*', 'content-type': 'application/json', 'content-length': '155'}
+2025-01-05 14:11:25,961 - INFO - Request 1736075485961 Body: {
+     "total_value": 1000,
+     "heirs": [
+       {
+         "name": "John",
+         "relation": "spouse",
+         "is_alive": true
+       }
+     ]
+   }
+2025-01-05 14:11:25,965 - INFO - Response 1736075485961: Status 422
+2025-01-05 14:11:25,965 - INFO - Response 1736075485961 Body: {
+  "detail": [
+    {
+      "type": "missing",
+      "loc": [
+        "body",
+        "family_tree"
+      ],
+      "msg": "Field required",
+      "input": {
+        "total_value": 1000,
+        "heirs": [
+          {
+            "name": "John",
+            "relation": "spouse",
+            "is_alive": true
+          }
+        ]
+      }
+    }
+  ]
+}
+2025-01-05 14:11:25,965 - INFO - Response 1736075485961: Completed in 0.003s
+2025-01-05 14:13:27,001 - INFO - Request 1736075607001: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:13:27,001 - INFO - Request 1736075607001 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '210', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:13:27,001 - INFO - Request 1736075607001 Body: {"total_value":1000,"family_tree":{"children":[{"name":"c","relation":"child","is_alive":true,"side":null,"children":[],"share":0,"id":"c-1736075606986"}],"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 14:13:27,007 - INFO - Calculation completed successfully
+2025-01-05 14:13:27,010 - INFO - Response 1736075607001: Status 200
+2025-01-05 14:13:27,010 - INFO - Response 1736075607001 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": null,
+    "children": [
+      {
+        "id": "c-1736075606986",
+        "name": "c",
+        "relation": "child",
+        "is_alive": true,
+        "share": 1000.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:13:27,010 - INFO - Response 1736075607001: Completed in 0.009s
+2025-01-05 14:15:59,369 - INFO - Request 1736075759369: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:15:59,371 - INFO - Request 1736075759369 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '214', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:15:59,371 - INFO - Request 1736075759369 Body: {"total_value":1000,"family_tree":{"children":[{"name":"asd","relation":"child","is_alive":true,"side":null,"children":[],"share":0,"id":"asd-1736075759353"}],"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 14:15:59,373 - INFO - Calculation completed successfully
+2025-01-05 14:15:59,373 - INFO - Response 1736075759369: Status 200
+2025-01-05 14:15:59,373 - INFO - Response 1736075759369 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": null,
+    "children": [
+      {
+        "id": "asd-1736075759353",
+        "name": "asd",
+        "relation": "child",
+        "is_alive": true,
+        "share": 1000.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:15:59,374 - INFO - Response 1736075759369: Completed in 0.004s
+2025-01-05 14:28:27,284 - INFO - Request 1736076507284: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:28:27,285 - INFO - Request 1736076507284 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '176', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:28:27,285 - INFO - Request 1736076507284 Body: {"total_value":1000,"family_tree":{"children":[{"id":"ce-1736076506245","name":"ce","relation":"child","is_alive":true}],"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 14:28:27,287 - INFO - Calculation completed successfully
+2025-01-05 14:28:27,287 - INFO - Response 1736076507284: Status 200
+2025-01-05 14:28:27,288 - INFO - Response 1736076507284 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": null,
+    "children": [
+      {
+        "id": "ce-1736076506245",
+        "name": "ce",
+        "relation": "child",
+        "is_alive": true,
+        "share": 1000.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:28:27,288 - INFO - Response 1736076507284: Completed in 0.003s
+2025-01-05 14:28:32,236 - INFO - Request 1736076512236: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:28:32,236 - INFO - Request 1736076512236 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '343', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:28:32,236 - INFO - Request 1736076512236 Body: {"total_value":1000,"family_tree":{"spouse":null,"children":[{"id":"ce-1736076506245","name":"ce","relation":"child","is_alive":true,"share":1000,"branch":"direct","parent_id":null,"children":[],"generation":null},{"id":"ja-1736076510684","name":"ja","relation":"child","is_alive":true}],"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 14:28:32,237 - INFO - Calculation completed successfully
+2025-01-05 14:28:32,238 - INFO - Response 1736076512236: Status 200
+2025-01-05 14:28:32,238 - INFO - Response 1736076512236 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": null,
+    "children": [
+      {
+        "id": "ce-1736076506245",
+        "name": "ce",
+        "relation": "child",
+        "is_alive": true,
+        "share": 500.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      },
+      {
+        "id": "ja-1736076510684",
+        "name": "ja",
+        "relation": "child",
+        "is_alive": true,
+        "share": 500.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:28:32,238 - INFO - Response 1736076512236: Completed in 0.002s
+2025-01-05 14:28:49,273 - INFO - Request 1736076529273: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:28:49,273 - INFO - Request 1736076529273 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '490', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:28:49,273 - INFO - Request 1736076529273 Body: {"total_value":1000,"family_tree":{"spouse":{"id":"ma-1736076527527","name":"ma","relation":"spouse","is_alive":true},"children":[{"id":"ce-1736076506245","name":"ce","relation":"child","is_alive":true,"share":500,"branch":"direct","parent_id":null,"children":[],"generation":null},{"id":"ja-1736076510684","name":"ja","relation":"child","is_alive":true,"share":500,"branch":"direct","parent_id":null,"children":[],"generation":null}],"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 14:28:49,274 - INFO - Calculation completed successfully
+2025-01-05 14:28:49,275 - INFO - Response 1736076529273: Status 200
+2025-01-05 14:28:49,276 - INFO - Response 1736076529273 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "ma-1736076527527",
+      "name": "ma",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "ce-1736076506245",
+        "name": "ce",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      },
+      {
+        "id": "ja-1736076510684",
+        "name": "ja",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:28:49,276 - INFO - Response 1736076529273: Completed in 0.002s
+2025-01-05 14:30:52,838 - INFO - Request 1736076652838: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:30:52,839 - INFO - Request 1736076652838 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '569', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:30:52,839 - INFO - Request 1736076652838 Body: {"total_value":1000,"family_tree":{"spouse":{"id":"ma-1736076527527","name":"ma","relation":"spouse","is_alive":true,"share":250,"branch":"direct","parent_id":null,"children":[],"generation":null},"children":[{"id":"ce-1736076506245","name":"ce","relation":"child","is_alive":true,"share":375,"branch":"direct","parent_id":null,"children":[],"generation":null},{"id":"ja-1736076510684","name":"ja","relation":"child","is_alive":true,"share":375,"branch":"direct","parent_id":null,"children":[],"generation":null}],"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 14:30:52,840 - INFO - Calculation completed successfully
+2025-01-05 14:30:52,840 - INFO - Response 1736076652838: Status 200
+2025-01-05 14:30:52,841 - INFO - Response 1736076652838 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "ma-1736076527527",
+      "name": "ma",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "ce-1736076506245",
+        "name": "ce",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      },
+      {
+        "id": "ja-1736076510684",
+        "name": "ja",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:30:52,841 - INFO - Response 1736076652838: Completed in 0.002s
+2025-01-05 14:31:15,842 - INFO - Request 1736076675842: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:31:15,842 - INFO - Request 1736076675842 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '744', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:31:15,842 - INFO - Request 1736076675842 Body: {"total_value":1000,"family_tree":{"spouse":{"id":"ma-1736076527527","name":"ma","relation":"spouse","is_alive":true,"share":250,"branch":"direct","parent_id":null,"children":[],"generation":null},"children":[{"id":"ce-1736076506245","name":"ce","relation":"child","is_alive":true,"share":375,"branch":"direct","parent_id":null,"children":[],"generation":null},{"id":"ja-1736076510684","name":"ja","relation":"child","is_alive":true,"share":375,"branch":"direct","parent_id":null,"children":[],"generation":null},{"id":"asd-1736076672966","name":"asd","relation":"child","is_alive":false,"children":[{"id":"asdasd-1736076664971","name":"asdasd","relation":"grandchild","is_alive":true}]}],"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 14:31:15,844 - INFO - Calculation completed successfully
+2025-01-05 14:31:15,844 - INFO - Response 1736076675842: Status 200
+2025-01-05 14:31:15,845 - INFO - Response 1736076675842 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "ma-1736076527527",
+      "name": "ma",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "ce-1736076506245",
+        "name": "ce",
+        "relation": "child",
+        "is_alive": true,
+        "share": 250.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      },
+      {
+        "id": "ja-1736076510684",
+        "name": "ja",
+        "relation": "child",
+        "is_alive": true,
+        "share": 250.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      },
+      {
+        "id": "asd-1736076672966",
+        "name": "asd",
+        "relation": "child",
+        "is_alive": false,
+        "share": 0.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [
+          {
+            "id": "asdasd-1736076664971",
+            "name": "asdasd",
+            "relation": "grandchild",
+            "is_alive": true,
+            "share": 250.0,
+            "branch": "direct",
+            "parent_id": null,
+            "children": [],
+            "generation": 1
+          }
+        ],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:31:15,845 - INFO - Response 1736076675842: Completed in 0.003s
+2025-01-05 14:35:12,202 - INFO - Request 1736076912202: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:35:12,202 - INFO - Request 1736076912202 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '245', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:35:12,202 - INFO - Request 1736076912202 Body: {"total_value":1000,"family_tree":{"children":[{"id":"c-1736076908628","name":"c","relation":"child","is_alive":true},{"id":"j-1736076911427","name":"j","relation":"child","is_alive":true}],"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 14:35:12,203 - INFO - Calculation completed successfully
+2025-01-05 14:35:12,204 - INFO - Response 1736076912202: Status 200
+2025-01-05 14:35:12,204 - INFO - Response 1736076912202 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": null,
+    "children": [
+      {
+        "id": "c-1736076908628",
+        "name": "c",
+        "relation": "child",
+        "is_alive": true,
+        "share": 500.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      },
+      {
+        "id": "j-1736076911427",
+        "name": "j",
+        "relation": "child",
+        "is_alive": true,
+        "share": 500.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:35:12,204 - INFO - Response 1736076912202: Completed in 0.002s
+2025-01-05 14:35:23,949 - INFO - Request 1736076923949: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:35:23,950 - INFO - Request 1736076923949 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '484', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:35:23,950 - INFO - Request 1736076923949 Body: {"total_value":1000,"family_tree":{"spouse":{"id":"m-1736076922450","name":"m","relation":"spouse","is_alive":true},"children":[{"id":"c-1736076908628","name":"c","relation":"child","is_alive":true,"share":500,"branch":"direct","parent_id":null,"children":[],"generation":null},{"id":"j-1736076911427","name":"j","relation":"child","is_alive":true,"share":500,"branch":"direct","parent_id":null,"children":[],"generation":null}],"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 14:35:23,951 - INFO - Calculation completed successfully
+2025-01-05 14:35:23,951 - INFO - Response 1736076923949: Status 200
+2025-01-05 14:35:23,952 - INFO - Response 1736076923949 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "m-1736076922450",
+      "name": "m",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "c-1736076908628",
+        "name": "c",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      },
+      {
+        "id": "j-1736076911427",
+        "name": "j",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:35:23,952 - INFO - Response 1736076923949: Completed in 0.002s
+2025-01-05 14:43:15,888 - INFO - Request 1736077395888: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:43:15,889 - INFO - Request 1736077395888 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '255', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:43:15,889 - INFO - Request 1736077395888 Body: {"total_value":1000,"family_tree":{"children":[{"id":"j-1736077387498","name":"j","relation":"child","is_alive":true}],"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"m-1736077383362","name":"m","relation":"spouse","is_alive":true}}}
+2025-01-05 14:43:15,891 - INFO - Calculation completed successfully
+2025-01-05 14:43:15,892 - INFO - Response 1736077395888: Status 200
+2025-01-05 14:43:15,893 - INFO - Response 1736077395888 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "m-1736077383362",
+      "name": "m",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "j-1736077387498",
+        "name": "j",
+        "relation": "child",
+        "is_alive": true,
+        "share": 750.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:43:15,893 - INFO - Response 1736077395888: Completed in 0.004s
+2025-01-05 14:44:02,369 - INFO - Request 1736077442369: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:44:02,369 - INFO - Request 1736077442369 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '255', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:44:02,369 - INFO - Request 1736077442369 Body: {"total_value":1000,"family_tree":{"children":[{"id":"b-1736077408028","name":"b","relation":"child","is_alive":true}],"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"m-1736077441046","name":"m","relation":"spouse","is_alive":true}}}
+2025-01-05 14:44:02,370 - INFO - Calculation completed successfully
+2025-01-05 14:44:02,371 - INFO - Response 1736077442369: Status 200
+2025-01-05 14:44:02,371 - INFO - Response 1736077442369 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "m-1736077441046",
+      "name": "m",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "b-1736077408028",
+        "name": "b",
+        "relation": "child",
+        "is_alive": true,
+        "share": 750.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:44:02,371 - INFO - Response 1736077442369: Completed in 0.002s
+2025-01-05 14:50:05,542 - INFO - Request 1736077805542: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:50:05,542 - INFO - Request 1736077805542 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '255', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:50:05,543 - INFO - Request 1736077805542 Body: {"total_value":1000,"family_tree":{"children":[{"id":"j-1736077794608","name":"j","relation":"child","is_alive":true}],"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"m-1736077791727","name":"m","relation":"spouse","is_alive":true}}}
+2025-01-05 14:50:05,544 - INFO - Calculation completed successfully
+2025-01-05 14:50:05,544 - INFO - Response 1736077805542: Status 200
+2025-01-05 14:50:05,545 - INFO - Response 1736077805542 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "m-1736077791727",
+      "name": "m",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "j-1736077794608",
+        "name": "j",
+        "relation": "child",
+        "is_alive": true,
+        "share": 750.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:50:05,545 - INFO - Response 1736077805542: Completed in 0.002s
+2025-01-05 14:50:48,890 - INFO - Request 1736077848890: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:50:48,890 - INFO - Request 1736077848890 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '413', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:50:48,891 - INFO - Request 1736077848890 Body: {"total_value":1000,"family_tree":{"spouse":{"id":"m-1736077791727","name":"m","relation":"spouse","is_alive":true,"share":250,"branch":"direct","parent_id":null,"children":[],"generation":null},"children":[{"id":"j-1736077794608","name":"j","relation":"child","is_alive":true,"share":750,"branch":"direct","parent_id":null,"children":[],"generation":null}],"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 14:50:48,892 - INFO - Calculation completed successfully
+2025-01-05 14:50:48,893 - INFO - Response 1736077848890: Status 200
+2025-01-05 14:50:48,893 - INFO - Response 1736077848890 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "m-1736077791727",
+      "name": "m",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "j-1736077794608",
+        "name": "j",
+        "relation": "child",
+        "is_alive": true,
+        "share": 750.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:50:48,894 - INFO - Response 1736077848890: Completed in 0.003s
+2025-01-05 14:50:49,408 - INFO - Request 1736077849408: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:50:49,408 - INFO - Request 1736077849408 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '413', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:50:49,409 - INFO - Request 1736077849408 Body: {"total_value":1000,"family_tree":{"spouse":{"id":"m-1736077791727","name":"m","relation":"spouse","is_alive":true,"share":250,"branch":"direct","parent_id":null,"children":[],"generation":null},"children":[{"id":"j-1736077794608","name":"j","relation":"child","is_alive":true,"share":750,"branch":"direct","parent_id":null,"children":[],"generation":null}],"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 14:50:49,410 - INFO - Calculation completed successfully
+2025-01-05 14:50:49,411 - INFO - Response 1736077849408: Status 200
+2025-01-05 14:50:49,411 - INFO - Response 1736077849408 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "m-1736077791727",
+      "name": "m",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "j-1736077794608",
+        "name": "j",
+        "relation": "child",
+        "is_alive": true,
+        "share": 750.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:50:49,411 - INFO - Response 1736077849408: Completed in 0.003s
+2025-01-05 14:50:49,628 - INFO - Request 1736077849628: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:50:49,628 - INFO - Request 1736077849628 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '413', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:50:49,629 - INFO - Request 1736077849628 Body: {"total_value":1000,"family_tree":{"spouse":{"id":"m-1736077791727","name":"m","relation":"spouse","is_alive":true,"share":250,"branch":"direct","parent_id":null,"children":[],"generation":null},"children":[{"id":"j-1736077794608","name":"j","relation":"child","is_alive":true,"share":750,"branch":"direct","parent_id":null,"children":[],"generation":null}],"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 14:50:49,630 - INFO - Calculation completed successfully
+2025-01-05 14:50:49,632 - INFO - Response 1736077849628: Status 200
+2025-01-05 14:50:49,632 - INFO - Response 1736077849628 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "m-1736077791727",
+      "name": "m",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "j-1736077794608",
+        "name": "j",
+        "relation": "child",
+        "is_alive": true,
+        "share": 750.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:50:49,634 - INFO - Response 1736077849628: Completed in 0.004s
+2025-01-05 14:54:42,346 - INFO - Request 1736078082346: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:54:42,348 - INFO - Request 1736078082346 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '255', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:54:42,348 - INFO - Request 1736078082346 Body: {"total_value":1000,"family_tree":{"children":[{"id":"j-1736078073463","name":"j","relation":"child","is_alive":true}],"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"m-1736078070528","name":"m","relation":"spouse","is_alive":true}}}
+2025-01-05 14:54:42,349 - INFO - Calculation completed successfully
+2025-01-05 14:54:42,350 - INFO - Response 1736078082346: Status 200
+2025-01-05 14:54:42,352 - INFO - Response 1736078082346 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "m-1736078070528",
+      "name": "m",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "j-1736078073463",
+        "name": "j",
+        "relation": "child",
+        "is_alive": true,
+        "share": 750.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:54:42,352 - INFO - Response 1736078082346: Completed in 0.004s
+2025-01-05 14:55:05,137 - INFO - Request 1736078105137: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:55:05,137 - INFO - Request 1736078105137 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '338', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:55:05,138 - INFO - Request 1736078105137 Body: {"total_value":1000,"family_tree":{"spouse":{"id":"fgh-1736078104088","name":"fgh","relation":"spouse","is_alive":true},"children":[{"id":"j-1736078073463","name":"j","relation":"child","is_alive":true,"share":750,"branch":"direct","parent_id":null,"children":[],"generation":null}],"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 14:55:05,140 - INFO - Calculation completed successfully
+2025-01-05 14:55:05,142 - INFO - Response 1736078105137: Status 200
+2025-01-05 14:55:05,142 - INFO - Response 1736078105137 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "fgh-1736078104088",
+      "name": "fgh",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "j-1736078073463",
+        "name": "j",
+        "relation": "child",
+        "is_alive": true,
+        "share": 750.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:55:05,143 - INFO - Response 1736078105137: Completed in 0.005s
+2025-01-05 14:55:14,961 - INFO - Request 1736078114961: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:55:14,961 - INFO - Request 1736078114961 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '344', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:55:14,961 - INFO - Request 1736078114961 Body: {"total_value":1000,"family_tree":{"spouse":{"id":"sdfsdf-1736078113861","name":"sdfsdf","relation":"spouse","is_alive":true},"children":[{"id":"j-1736078073463","name":"j","relation":"child","is_alive":true,"share":750,"branch":"direct","parent_id":null,"children":[],"generation":null}],"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 14:55:14,962 - INFO - Calculation completed successfully
+2025-01-05 14:55:14,963 - INFO - Response 1736078114961: Status 200
+2025-01-05 14:55:14,964 - INFO - Response 1736078114961 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "sdfsdf-1736078113861",
+      "name": "sdfsdf",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "j-1736078073463",
+        "name": "j",
+        "relation": "child",
+        "is_alive": true,
+        "share": 750.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:55:14,965 - INFO - Response 1736078114961: Completed in 0.002s
+2025-01-05 14:59:22,290 - INFO - Request 1736078362290: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:59:22,290 - INFO - Request 1736078362290 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '259', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:59:22,290 - INFO - Request 1736078362290 Body: {"total_value":1000,"family_tree":{"children":[{"id":"j-1736078353456","name":"j","relation":"child","is_alive":true}],"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"mar-1736078349812","name":"mar","relation":"spouse","is_alive":true}}}
+2025-01-05 14:59:22,291 - INFO - Calculation completed successfully
+2025-01-05 14:59:22,292 - INFO - Response 1736078362290: Status 200
+2025-01-05 14:59:22,294 - INFO - Response 1736078362290 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "mar-1736078349812",
+      "name": "mar",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "j-1736078353456",
+        "name": "j",
+        "relation": "child",
+        "is_alive": true,
+        "share": 750.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:59:22,294 - INFO - Response 1736078362290: Completed in 0.002s
+2025-01-05 14:59:30,430 - INFO - Request 1736078370430: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 14:59:30,430 - INFO - Request 1736078370430 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '417', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 14:59:30,430 - INFO - Request 1736078370430 Body: {"total_value":1000,"family_tree":{"spouse":{"id":"mar-1736078349812","name":"mar","relation":"spouse","is_alive":true,"share":250,"branch":"direct","parent_id":null,"children":[],"generation":null},"children":[{"id":"j-1736078353456","name":"j","relation":"child","is_alive":true,"share":750,"branch":"direct","parent_id":null,"children":[],"generation":null}],"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 14:59:30,432 - INFO - Calculation completed successfully
+2025-01-05 14:59:30,433 - INFO - Response 1736078370430: Status 200
+2025-01-05 14:59:30,433 - INFO - Response 1736078370430 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "mar-1736078349812",
+      "name": "mar",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "j-1736078353456",
+        "name": "j",
+        "relation": "child",
+        "is_alive": true,
+        "share": 750.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 14:59:30,433 - INFO - Response 1736078370430: Completed in 0.003s
+2025-01-05 15:04:43,789 - INFO - Request 1736078683789: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 15:04:43,789 - INFO - Request 1736078683789 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '506', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 15:04:43,789 - INFO - Request 1736078683789 Body: {"total_value":1000,"family_tree":{"children":[{"id":"cc-1736078635331","name":"cc","relation":"child","is_alive":true},{"id":"jak-1736078644892","name":"jak","relation":"child","is_alive":true},{"id":"asd-1736078669819","name":"asd","relation":"child","is_alive":false,"children":[{"id":"asdasd-1736078657066","name":"asdasd","relation":"child","is_alive":true}]}],"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"mar-1736078630733","name":"mar","relation":"spouse","is_alive":true}}}
+2025-01-05 15:04:43,792 - INFO - Calculation completed successfully
+2025-01-05 15:04:43,793 - INFO - Response 1736078683789: Status 200
+2025-01-05 15:04:43,793 - INFO - Response 1736078683789 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "mar-1736078630733",
+      "name": "mar",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "cc-1736078635331",
+        "name": "cc",
+        "relation": "child",
+        "is_alive": true,
+        "share": 250.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      },
+      {
+        "id": "jak-1736078644892",
+        "name": "jak",
+        "relation": "child",
+        "is_alive": true,
+        "share": 250.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      },
+      {
+        "id": "asd-1736078669819",
+        "name": "asd",
+        "relation": "child",
+        "is_alive": false,
+        "share": 0.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [
+          {
+            "id": "asdasd-1736078657066",
+            "name": "asdasd",
+            "relation": "child",
+            "is_alive": true,
+            "share": 250.0,
+            "branch": "direct",
+            "parent_id": null,
+            "children": [],
+            "generation": 1
+          }
+        ],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 15:04:43,793 - INFO - Response 1736078683789: Completed in 0.004s
+2025-01-05 15:05:22,569 - INFO - Request 1736078722569: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 15:05:22,569 - INFO - Request 1736078722569 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '346', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 15:05:22,570 - INFO - Request 1736078722569 Body: {"total_value":1000,"family_tree":{"children":[{"id":"jak-1736078717883","name":"jak","relation":"child","is_alive":true},{"id":"celil-1736078721364","name":"celil","relation":"child","is_alive":true}],"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"marin-1736078709666","name":"marin","relation":"spouse","is_alive":true}}}
+2025-01-05 15:05:22,571 - INFO - Calculation completed successfully
+2025-01-05 15:05:22,572 - INFO - Response 1736078722569: Status 200
+2025-01-05 15:05:22,572 - INFO - Response 1736078722569 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "marin-1736078709666",
+      "name": "marin",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "jak-1736078717883",
+        "name": "jak",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      },
+      {
+        "id": "celil-1736078721364",
+        "name": "celil",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 15:05:22,572 - INFO - Response 1736078722569: Completed in 0.003s
+2025-01-05 15:06:16,645 - INFO - Request 1736078776645: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 15:06:16,645 - INFO - Request 1736078776645 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '595', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 15:06:16,645 - INFO - Request 1736078776645 Body: {"total_value":1000,"family_tree":{"children":[{"id":"celil-1736078741194","name":"celil","relation":"child","is_alive":true},{"id":"jak-1736078765678","name":"jak","relation":"child","is_alive":false,"children":[{"id":"j1-1736078749133","name":"j1","relation":"child","is_alive":true},{"id":"j2-1736078760366","name":"j2","relation":"child","is_alive":false,"children":[{"id":"j22-1736078759138","name":"j22","relation":"child","is_alive":true}]}]}],"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"marin-1736078728714","name":"marin","relation":"spouse","is_alive":true}}}
+2025-01-05 15:06:16,649 - INFO - Calculation completed successfully
+2025-01-05 15:06:16,649 - INFO - Response 1736078776645: Status 200
+2025-01-05 15:06:16,650 - INFO - Response 1736078776645 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "marin-1736078728714",
+      "name": "marin",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "celil-1736078741194",
+        "name": "celil",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      },
+      {
+        "id": "jak-1736078765678",
+        "name": "jak",
+        "relation": "child",
+        "is_alive": false,
+        "share": 0.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [
+          {
+            "id": "j1-1736078749133",
+            "name": "j1",
+            "relation": "child",
+            "is_alive": true,
+            "share": 187.5,
+            "branch": "direct",
+            "parent_id": null,
+            "children": [],
+            "generation": 1
+          },
+          {
+            "id": "j2-1736078760366",
+            "name": "j2",
+            "relation": "child",
+            "is_alive": false,
+            "share": 0.0,
+            "branch": "direct",
+            "parent_id": null,
+            "children": [
+              {
+                "id": "j22-1736078759138",
+                "name": "j22",
+                "relation": "child",
+                "is_alive": true,
+                "share": 187.5,
+                "branch": "direct",
+                "parent_id": null,
+                "children": [],
+                "generation": 2
+              }
+            ],
+            "generation": 1
+          }
+        ],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 15:06:16,650 - INFO - Response 1736078776645: Completed in 0.005s
+2025-01-05 15:14:33,568 - INFO - Request 1736079273568: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 15:14:33,568 - INFO - Request 1736079273568 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '276', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 15:14:33,569 - INFO - Request 1736079273568 Body: {"total_value":1000,"family_tree":{"children":[],"maternal_grandparents":[{"id":"h-1736079265173","name":"h","relation":"parent","is_alive":true,"branch":"maternal"}],"paternal_grandparents":[],"spouse":{"id":"m-1736079241221","name":"m","relation":"spouse","is_alive":true}}}
+2025-01-05 15:14:33,570 - INFO - Response 1736079273568: Status 422
+2025-01-05 15:14:33,571 - INFO - Response 1736079273568 Body: {
+  "detail": [
+    {
+      "type": "enum",
+      "loc": [
+        "body",
+        "family_tree",
+        "maternal_grandparents",
+        0,
+        "relation"
+      ],
+      "msg": "Input should be 'spouse', 'child', 'grandchild' or 'great_grandchild'",
+      "input": "parent",
+      "ctx": {
+        "expected": "'spouse', 'child', 'grandchild' or 'great_grandchild'"
+      }
+    }
+  ]
+}
+2025-01-05 15:14:33,571 - INFO - Response 1736079273568: Completed in 0.002s
+2025-01-05 15:32:16,363 - INFO - Request 1736080336363: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 15:32:16,363 - INFO - Request 1736080336363 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '631', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 15:32:16,364 - INFO - Request 1736080336363 Body: {"total_value":1000,"family_tree":{"children":[{"id":"asdasd-1736080305133","name":"asdasd","relation":"child","is_alive":true},{"id":"asdasdasd-1736080311222","name":"asdasdasd","relation":"child","is_alive":true},{"id":"fasfafda-1736080331965","name":"fasfafda","relation":"child","is_alive":false,"children":[{"id":"dssfsdfsdf-1736080325510","name":"dssfsdfsdf","relation":"child","is_alive":true},{"id":"sdfsdfsdf-1736080328783","name":"sdfsdfsdf","relation":"child","is_alive":true}]}],"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"asd-1736080299699","name":"asd","relation":"spouse","is_alive":true}}}
+2025-01-05 15:32:16,365 - INFO - Calculation completed successfully
+2025-01-05 15:32:16,367 - INFO - Response 1736080336363: Status 200
+2025-01-05 15:32:16,367 - INFO - Response 1736080336363 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "asd-1736080299699",
+      "name": "asd",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "asdasd-1736080305133",
+        "name": "asdasd",
+        "relation": "child",
+        "is_alive": true,
+        "share": 250.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      },
+      {
+        "id": "asdasdasd-1736080311222",
+        "name": "asdasdasd",
+        "relation": "child",
+        "is_alive": true,
+        "share": 250.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      },
+      {
+        "id": "fasfafda-1736080331965",
+        "name": "fasfafda",
+        "relation": "child",
+        "is_alive": false,
+        "share": 0.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [
+          {
+            "id": "dssfsdfsdf-1736080325510",
+            "name": "dssfsdfsdf",
+            "relation": "child",
+            "is_alive": true,
+            "share": 125.0,
+            "branch": "direct",
+            "parent_id": null,
+            "children": [],
+            "generation": 1
+          },
+          {
+            "id": "sdfsdfsdf-1736080328783",
+            "name": "sdfsdfsdf",
+            "relation": "child",
+            "is_alive": true,
+            "share": 125.0,
+            "branch": "direct",
+            "parent_id": null,
+            "children": [],
+            "generation": 1
+          }
+        ],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 15:32:16,367 - INFO - Response 1736080336363: Completed in 0.004s
+2025-01-05 15:35:11,391 - INFO - Request 1736080511391: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 15:35:11,391 - INFO - Request 1736080511391 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '205', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 15:35:11,391 - INFO - Request 1736080511391 Body: {"total_value":1000,"family_tree":{"children":[],"maternal_grandparents":[{"id":"asdasd-1736080441925","name":"asdasd","relation":"parent","is_alive":true,"branch":"maternal"}],"paternal_grandparents":[]}}
+2025-01-05 15:35:11,393 - INFO - Response 1736080511391: Status 422
+2025-01-05 15:35:11,395 - INFO - Response 1736080511391 Body: {
+  "detail": [
+    {
+      "type": "enum",
+      "loc": [
+        "body",
+        "family_tree",
+        "maternal_grandparents",
+        0,
+        "relation"
+      ],
+      "msg": "Input should be 'spouse', 'child', 'grandchild' or 'great_grandchild'",
+      "input": "parent",
+      "ctx": {
+        "expected": "'spouse', 'child', 'grandchild' or 'great_grandchild'"
+      }
+    }
+  ]
+}
+2025-01-05 15:35:11,395 - INFO - Response 1736080511391: Completed in 0.002s
+2025-01-05 15:37:00,564 - INFO - Request 1736080620564: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 15:37:00,564 - INFO - Request 1736080620564 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '346', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 15:37:00,564 - INFO - Request 1736080620564 Body: {"total_value":1000,"family_tree":{"children":[{"id":"jak-1736080615729","name":"jak","relation":"child","is_alive":true},{"id":"celil-1736080619551","name":"celil","relation":"child","is_alive":true}],"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"marin-1736080612871","name":"marin","relation":"spouse","is_alive":true}}}
+2025-01-05 15:37:00,565 - INFO - Calculation completed successfully
+2025-01-05 15:37:00,566 - INFO - Response 1736080620564: Status 200
+2025-01-05 15:37:00,566 - INFO - Response 1736080620564 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "marin-1736080612871",
+      "name": "marin",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "jak-1736080615729",
+        "name": "jak",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      },
+      {
+        "id": "celil-1736080619551",
+        "name": "celil",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 15:37:00,566 - INFO - Response 1736080620564: Completed in 0.002s
+2025-01-05 15:38:00,619 - INFO - Request 1736080680619: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 15:38:00,619 - INFO - Request 1736080680619 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '484', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 15:38:00,620 - INFO - Request 1736080680619 Body: {"total_value":1000,"family_tree":{"children":[],"maternal_grandparents":[{"id":"hatun-1736080676455","name":"hatun","relation":"parent","is_alive":false,"branch":"maternal","children":[{"id":"fehmi-1736080670799","name":"fehmi","relation":"child","is_alive":true}]}],"paternal_grandparents":[{"id":"abdul-1736080647168","name":"abdul","relation":"parent","is_alive":true,"branch":"paternal"}],"spouse":{"id":"marin-1736080629017","name":"marin","relation":"spouse","is_alive":true}}}
+2025-01-05 15:38:00,621 - INFO - Response 1736080680619: Status 422
+2025-01-05 15:38:00,621 - INFO - Response 1736080680619 Body: {
+  "detail": [
+    {
+      "type": "enum",
+      "loc": [
+        "body",
+        "family_tree",
+        "maternal_grandparents",
+        0,
+        "relation"
+      ],
+      "msg": "Input should be 'spouse', 'child', 'grandchild' or 'great_grandchild'",
+      "input": "parent",
+      "ctx": {
+        "expected": "'spouse', 'child', 'grandchild' or 'great_grandchild'"
+      }
+    },
+    {
+      "type": "enum",
+      "loc": [
+        "body",
+        "family_tree",
+        "paternal_grandparents",
+        0,
+        "relation"
+      ],
+      "msg": "Input should be 'spouse', 'child', 'grandchild' or 'great_grandchild'",
+      "input": "parent",
+      "ctx": {
+        "expected": "'spouse', 'child', 'grandchild' or 'great_grandchild'"
+      }
+    }
+  ]
+}
+2025-01-05 15:38:00,621 - INFO - Response 1736080680619: Completed in 0.002s
+2025-01-05 15:40:47,274 - INFO - Request 1736080847274: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 15:40:47,274 - INFO - Request 1736080847274 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '259', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 15:40:47,275 - INFO - Request 1736080847274 Body: {"total_value":1000,"family_tree":{"children":[{"id":"asd-1736080845839","name":"asd","relation":"child","is_alive":true}],"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"a-1736080841956","name":"a","relation":"spouse","is_alive":true}}}
+2025-01-05 15:40:47,276 - INFO - Calculation completed successfully
+2025-01-05 15:40:47,277 - INFO - Response 1736080847274: Status 200
+2025-01-05 15:40:47,277 - INFO - Response 1736080847274 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "a-1736080841956",
+      "name": "a",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "asd-1736080845839",
+        "name": "asd",
+        "relation": "child",
+        "is_alive": true,
+        "share": 750.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 15:40:47,277 - INFO - Response 1736080847274: Completed in 0.003s
+2025-01-05 15:41:08,334 - INFO - Request 1736080868334: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 15:41:08,334 - INFO - Request 1736080868334 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '375', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 15:41:08,334 - INFO - Request 1736080868334 Body: {"total_value":1000,"family_tree":{"children":[],"maternal_grandparents":[{"id":"asd-1736080860448","name":"asd","relation":"parent","is_alive":true,"branch":"maternal"}],"paternal_grandparents":[{"id":"asd-1736080867104","name":"asd","relation":"parent","is_alive":true,"branch":"paternal"}],"spouse":{"id":"a-1736080852589","name":"a","relation":"spouse","is_alive":true}}}
+2025-01-05 15:41:08,336 - INFO - Response 1736080868334: Status 422
+2025-01-05 15:41:08,336 - INFO - Response 1736080868334 Body: {
+  "detail": [
+    {
+      "type": "enum",
+      "loc": [
+        "body",
+        "family_tree",
+        "maternal_grandparents",
+        0,
+        "relation"
+      ],
+      "msg": "Input should be 'spouse', 'child', 'grandchild' or 'great_grandchild'",
+      "input": "parent",
+      "ctx": {
+        "expected": "'spouse', 'child', 'grandchild' or 'great_grandchild'"
+      }
+    },
+    {
+      "type": "enum",
+      "loc": [
+        "body",
+        "family_tree",
+        "paternal_grandparents",
+        0,
+        "relation"
+      ],
+      "msg": "Input should be 'spouse', 'child', 'grandchild' or 'great_grandchild'",
+      "input": "parent",
+      "ctx": {
+        "expected": "'spouse', 'child', 'grandchild' or 'great_grandchild'"
+      }
+    }
+  ]
+}
+2025-01-05 15:41:08,336 - INFO - Response 1736080868334: Completed in 0.002s
+2025-01-05 16:06:01,680 - INFO - Request 1736082361680: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 16:06:01,681 - INFO - Request 1736082361680 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '326', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 16:06:01,681 - INFO - Request 1736082361680 Body: {"total_value":1000,"family_tree":{"children":[{"id":"j-1736082356964","name":"j","relation":"child","is_alive":true},{"id":"c-1736082359610","name":"c","relation":"child","is_alive":true}],"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"m-1736082353320","name":"m","relation":"spouse","is_alive":true}}}
+2025-01-05 16:06:01,684 - INFO - Calculation completed successfully
+2025-01-05 16:06:01,684 - INFO - Response 1736082361680: Status 200
+2025-01-05 16:06:01,685 - INFO - Response 1736082361680 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "m-1736082353320",
+      "name": "m",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "j-1736082356964",
+        "name": "j",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      },
+      {
+        "id": "c-1736082359610",
+        "name": "c",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 16:06:01,685 - INFO - Response 1736082361680: Completed in 0.004s
+2025-01-05 16:06:58,758 - INFO - Request 1736082418758: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 16:06:58,758 - INFO - Request 1736082418758 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '960', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 16:06:58,759 - INFO - Request 1736082418758 Body: {"total_value":1000,"family_tree":{"spouse":{"id":"m-1736082353320","name":"m","relation":"spouse","is_alive":true,"share":250,"branch":"direct","parent_id":null,"children":[],"generation":null},"children":[{"id":"j-1736082356964","name":"j","relation":"child","is_alive":true,"share":375,"branch":"direct","parent_id":null,"children":[],"generation":null},{"id":"c-1736082359610","name":"c","relation":"child","is_alive":true,"share":375,"branch":"direct","parent_id":null,"children":[],"generation":null},{"id":"cc-1736082412864","name":"cc","relation":"child","is_alive":false,"children":[{"id":"cc-1736082383324","name":"cc","relation":"child","is_alive":true},{"id":"asd-1736082393581","name":"asd","relation":"child","is_alive":true},{"id":"as-1736082409038","name":"as","relation":"child","is_alive":false,"children":[{"id":"asd-1736082402629","name":"asd","relation":"child","is_alive":true}]}]}],"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 16:06:58,761 - INFO - Calculation completed successfully
+2025-01-05 16:06:58,762 - INFO - Response 1736082418758: Status 200
+2025-01-05 16:06:58,763 - INFO - Response 1736082418758 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "m-1736082353320",
+      "name": "m",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null
+    },
+    "children": [
+      {
+        "id": "j-1736082356964",
+        "name": "j",
+        "relation": "child",
+        "is_alive": true,
+        "share": 250.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      },
+      {
+        "id": "c-1736082359610",
+        "name": "c",
+        "relation": "child",
+        "is_alive": true,
+        "share": 250.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      },
+      {
+        "id": "cc-1736082412864",
+        "name": "cc",
+        "relation": "child",
+        "is_alive": false,
+        "share": 0.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [
+          {
+            "id": "cc-1736082383324",
+            "name": "cc",
+            "relation": "child",
+            "is_alive": true,
+            "share": 83.33333333333333,
+            "branch": "direct",
+            "parent_id": null,
+            "children": [],
+            "generation": null
+          },
+          {
+            "id": "asd-1736082393581",
+            "name": "asd",
+            "relation": "child",
+            "is_alive": true,
+            "share": 83.33333333333333,
+            "branch": "direct",
+            "parent_id": null,
+            "children": [],
+            "generation": null
+          },
+          {
+            "id": "as-1736082409038",
+            "name": "as",
+            "relation": "child",
+            "is_alive": false,
+            "share": 0.0,
+            "branch": "direct",
+            "parent_id": null,
+            "children": [
+              {
+                "id": "asd-1736082402629",
+                "name": "asd",
+                "relation": "child",
+                "is_alive": true,
+                "share": 83.33333333333333,
+                "branch": "direct",
+                "parent_id": null,
+                "children": [],
+                "generation": null
+              }
+            ],
+            "generation": null
+          }
+        ],
+        "generation": null
+      }
+    ],
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 16:06:58,764 - INFO - Response 1736082418758: Completed in 0.004s
+2025-01-05 16:08:44,875 - INFO - Request 1736082524875: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 16:08:44,876 - INFO - Request 1736082524875 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '290', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 16:08:44,876 - INFO - Request 1736082524875 Body: {"total_value":1000,"family_tree":{"children":[],"maternal_grandparents":[{"id":"ma-1736082523451","name":"ma","relation":"parent","is_alive":true,"branch":"maternal"}],"paternal_grandparents":[{"id":"ab-1736082508553","name":"ab","relation":"parent","is_alive":true,"branch":"paternal"}]}}
+2025-01-05 16:08:44,877 - INFO - Calculation completed successfully
+2025-01-05 16:08:44,878 - INFO - Response 1736082524875: Status 200
+2025-01-05 16:08:44,878 - INFO - Response 1736082524875 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": null,
+    "children": [],
+    "maternal_grandparents": [
+      {
+        "id": "ma-1736082523451",
+        "name": "ma",
+        "relation": "parent",
+        "is_alive": true,
+        "share": 500.0,
+        "branch": "maternal",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "paternal_grandparents": [
+      {
+        "id": "ab-1736082508553",
+        "name": "ab",
+        "relation": "parent",
+        "is_alive": true,
+        "share": 500.0,
+        "branch": "paternal",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ]
+  }
+}
+2025-01-05 16:08:44,878 - INFO - Response 1736082524875: Completed in 0.003s
+2025-01-05 16:09:10,328 - INFO - Request 1736082550328: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 16:09:10,328 - INFO - Request 1736082550328 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '634', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 16:09:10,328 - INFO - Request 1736082550328 Body: {"total_value":1000,"family_tree":{"spouse":null,"children":[],"maternal_grandparents":[{"id":"ma-1736082523451","name":"ma","relation":"parent","is_alive":true,"share":500,"branch":"maternal","parent_id":null,"children":[],"generation":null}],"paternal_grandparents":[{"id":"ab-1736082508553","name":"ab","relation":"parent","is_alive":true,"share":500,"branch":"paternal","parent_id":null,"children":[],"generation":null},{"id":"asd-1736082539001","name":"asd","relation":"parent","is_alive":false,"branch":"paternal","children":[{"id":"asdf-1736082537561","name":"asdf","relation":"parent","is_alive":true,"branch":"paternal"}]}]}}
+2025-01-05 16:09:10,329 - INFO - Calculation completed successfully
+2025-01-05 16:09:10,330 - INFO - Response 1736082550328: Status 200
+2025-01-05 16:09:10,330 - INFO - Response 1736082550328 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": null,
+    "children": [],
+    "maternal_grandparents": [
+      {
+        "id": "ma-1736082523451",
+        "name": "ma",
+        "relation": "parent",
+        "is_alive": true,
+        "share": 500.0,
+        "branch": "maternal",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      }
+    ],
+    "paternal_grandparents": [
+      {
+        "id": "ab-1736082508553",
+        "name": "ab",
+        "relation": "parent",
+        "is_alive": true,
+        "share": 250.0,
+        "branch": "paternal",
+        "parent_id": null,
+        "children": [],
+        "generation": null
+      },
+      {
+        "id": "asd-1736082539001",
+        "name": "asd",
+        "relation": "parent",
+        "is_alive": false,
+        "share": 0.0,
+        "branch": "paternal",
+        "parent_id": null,
+        "children": [
+          {
+            "id": "asdf-1736082537561",
+            "name": "asdf",
+            "relation": "parent",
+            "is_alive": true,
+            "share": 250.0,
+            "branch": "paternal",
+            "parent_id": null,
+            "children": [],
+            "generation": 1
+          }
+        ],
+        "generation": null
+      }
+    ]
+  }
+}
+2025-01-05 16:09:10,331 - INFO - Response 1736082550328: Completed in 0.002s
+2025-01-05 16:14:22,401 - INFO - Request 1736082862401: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 16:14:22,401 - INFO - Request 1736082862401 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '330', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 16:14:22,401 - INFO - Request 1736082862401 Body: {"total_value":1000,"family_tree":{"children":[{"id":"c-1736082859354","name":"c","relation":"child","is_alive":true},{"id":"j-1736082861603","name":"j","relation":"child","is_alive":true}],"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"mar-1736082856869","name":"mar","relation":"spouse","is_alive":true}}}
+2025-01-05 16:14:22,404 - INFO - Calculation completed successfully
+2025-01-05 16:14:22,405 - INFO - Response 1736082862401: Status 200
+2025-01-05 16:14:22,405 - INFO - Response 1736082862401 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "mar-1736082856869",
+      "name": "mar",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null,
+      "parent_type": null
+    },
+    "children": [
+      {
+        "id": "c-1736082859354",
+        "name": "c",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      },
+      {
+        "id": "j-1736082861603",
+        "name": "j",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      }
+    ],
+    "mother": null,
+    "father": null,
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 16:14:22,405 - INFO - Response 1736082862401: Completed in 0.004s
+2025-01-05 16:15:01,617 - INFO - Request 1736082901617: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 16:15:01,617 - INFO - Request 1736082901617 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '1045', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 16:15:01,618 - INFO - Request 1736082901617 Body: {"total_value":1000,"family_tree":{"spouse":{"id":"mar-1736082856869","name":"mar","relation":"spouse","is_alive":true,"share":250,"branch":"direct","parent_id":null,"children":[],"generation":null,"parent_type":null},"children":[{"id":"c-1736082859354","name":"c","relation":"child","is_alive":true,"share":375,"branch":"direct","parent_id":null,"children":[],"generation":null,"parent_type":null},{"id":"j-1736082861603","name":"j","relation":"child","is_alive":true,"share":375,"branch":"direct","parent_id":null,"children":[],"generation":null,"parent_type":null},{"id":"d-1736082898570","name":"d","relation":"child","is_alive":false,"children":[{"id":"d1-1736082873784","name":"d1","relation":"child","is_alive":true},{"id":"d2-1736082877001","name":"d2","relation":"child","is_alive":true},{"id":"d3-1736082892008","name":"d3","relation":"child","is_alive":false,"children":[{"id":"d31-1736082889718","name":"d31","relation":"child","is_alive":true}]}]}],"mother":null,"father":null,"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 16:15:01,619 - INFO - Calculation completed successfully
+2025-01-05 16:15:01,620 - INFO - Response 1736082901617: Status 200
+2025-01-05 16:15:01,621 - INFO - Response 1736082901617 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "mar-1736082856869",
+      "name": "mar",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null,
+      "parent_type": null
+    },
+    "children": [
+      {
+        "id": "c-1736082859354",
+        "name": "c",
+        "relation": "child",
+        "is_alive": true,
+        "share": 250.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      },
+      {
+        "id": "j-1736082861603",
+        "name": "j",
+        "relation": "child",
+        "is_alive": true,
+        "share": 250.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      },
+      {
+        "id": "d-1736082898570",
+        "name": "d",
+        "relation": "child",
+        "is_alive": false,
+        "share": 0.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [
+          {
+            "id": "d1-1736082873784",
+            "name": "d1",
+            "relation": "child",
+            "is_alive": true,
+            "share": 83.33333333333333,
+            "branch": "direct",
+            "parent_id": null,
+            "children": [],
+            "generation": null,
+            "parent_type": null
+          },
+          {
+            "id": "d2-1736082877001",
+            "name": "d2",
+            "relation": "child",
+            "is_alive": true,
+            "share": 83.33333333333333,
+            "branch": "direct",
+            "parent_id": null,
+            "children": [],
+            "generation": null,
+            "parent_type": null
+          },
+          {
+            "id": "d3-1736082892008",
+            "name": "d3",
+            "relation": "child",
+            "is_alive": false,
+            "share": 0.0,
+            "branch": "direct",
+            "parent_id": null,
+            "children": [
+              {
+                "id": "d31-1736082889718",
+                "name": "d31",
+                "relation": "child",
+                "is_alive": true,
+                "share": 83.33333333333333,
+                "branch": "direct",
+                "parent_id": null,
+                "children": [],
+                "generation": null,
+                "parent_type": null
+              }
+            ],
+            "generation": null,
+            "parent_type": null
+          }
+        ],
+        "generation": null,
+        "parent_type": null
+      }
+    ],
+    "mother": null,
+    "father": null,
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 16:15:01,621 - INFO - Response 1736082901617: Completed in 0.003s
+2025-01-05 16:15:14,292 - INFO - Request 1736082914292: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 16:15:14,292 - INFO - Request 1736082914292 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '189', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 16:15:14,292 - INFO - Request 1736082914292 Body: {"total_value":1000,"family_tree":{"children":[],"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"mar-1736082910014","name":"mar","relation":"spouse","is_alive":true}}}
+2025-01-05 16:15:14,294 - INFO - Calculation completed successfully
+2025-01-05 16:15:14,294 - INFO - Response 1736082914292: Status 200
+2025-01-05 16:15:14,295 - INFO - Response 1736082914292 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "mar-1736082910014",
+      "name": "mar",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 1000.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null,
+      "parent_type": null
+    },
+    "children": [],
+    "mother": null,
+    "father": null,
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 16:15:14,295 - INFO - Response 1736082914292: Completed in 0.002s
+2025-01-05 16:16:02,871 - INFO - Request 1736082962871: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 16:16:02,871 - INFO - Request 1736082962871 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '195', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 16:16:02,871 - INFO - Request 1736082962871 Body: {"total_value":1000,"family_tree":{"children":[],"maternal_grandparents":[{"id":"c-1736082958149","name":"c","relation":"parent","is_alive":true,"branch":"maternal"}],"paternal_grandparents":[]}}
+2025-01-05 16:16:02,874 - INFO - Calculation completed successfully
+2025-01-05 16:16:02,875 - INFO - Response 1736082962871: Status 200
+2025-01-05 16:16:02,875 - INFO - Response 1736082962871 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": null,
+    "children": [],
+    "mother": null,
+    "father": null,
+    "maternal_grandparents": [
+      {
+        "id": "c-1736082958149",
+        "name": "c",
+        "relation": "parent",
+        "is_alive": true,
+        "share": 500.0,
+        "branch": "maternal",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      }
+    ],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 16:16:02,875 - INFO - Response 1736082962871: Completed in 0.004s
+2025-01-05 16:16:03,924 - INFO - Request 1736082963924: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 16:16:03,925 - INFO - Request 1736082963924 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '317', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 16:16:03,925 - INFO - Request 1736082963924 Body: {"total_value":1000,"family_tree":{"spouse":null,"children":[],"mother":null,"father":null,"maternal_grandparents":[{"id":"c-1736082958149","name":"c","relation":"parent","is_alive":true,"share":500,"branch":"maternal","parent_id":null,"children":[],"generation":null,"parent_type":null}],"paternal_grandparents":[]}}
+2025-01-05 16:16:03,926 - INFO - Calculation completed successfully
+2025-01-05 16:16:03,927 - INFO - Response 1736082963924: Status 200
+2025-01-05 16:16:03,927 - INFO - Response 1736082963924 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": null,
+    "children": [],
+    "mother": null,
+    "father": null,
+    "maternal_grandparents": [
+      {
+        "id": "c-1736082958149",
+        "name": "c",
+        "relation": "parent",
+        "is_alive": true,
+        "share": 500.0,
+        "branch": "maternal",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      }
+    ],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 16:16:03,928 - INFO - Response 1736082963924: Completed in 0.003s
+2025-01-05 16:16:04,479 - INFO - Request 1736082964479: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 16:16:04,480 - INFO - Request 1736082964479 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '317', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 16:16:04,480 - INFO - Request 1736082964479 Body: {"total_value":1000,"family_tree":{"spouse":null,"children":[],"mother":null,"father":null,"maternal_grandparents":[{"id":"c-1736082958149","name":"c","relation":"parent","is_alive":true,"share":500,"branch":"maternal","parent_id":null,"children":[],"generation":null,"parent_type":null}],"paternal_grandparents":[]}}
+2025-01-05 16:16:04,481 - INFO - Calculation completed successfully
+2025-01-05 16:16:04,481 - INFO - Response 1736082964479: Status 200
+2025-01-05 16:16:04,482 - INFO - Response 1736082964479 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": null,
+    "children": [],
+    "mother": null,
+    "father": null,
+    "maternal_grandparents": [
+      {
+        "id": "c-1736082958149",
+        "name": "c",
+        "relation": "parent",
+        "is_alive": true,
+        "share": 500.0,
+        "branch": "maternal",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      }
+    ],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 16:16:04,482 - INFO - Response 1736082964479: Completed in 0.002s
+2025-01-05 16:16:13,773 - INFO - Request 1736082973773: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 16:16:13,773 - INFO - Request 1736082973773 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '410', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 16:16:13,773 - INFO - Request 1736082973773 Body: {"total_value":1000,"family_tree":{"spouse":null,"children":[],"mother":null,"father":null,"maternal_grandparents":[{"id":"c-1736082958149","name":"c","relation":"parent","is_alive":true,"share":500,"branch":"maternal","parent_id":null,"children":[],"generation":null,"parent_type":null}],"paternal_grandparents":[{"id":"cc-1736082972554","name":"cc","relation":"parent","is_alive":true,"branch":"paternal"}]}}
+2025-01-05 16:16:13,775 - INFO - Calculation completed successfully
+2025-01-05 16:16:13,775 - INFO - Response 1736082973773: Status 200
+2025-01-05 16:16:13,776 - INFO - Response 1736082973773 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": null,
+    "children": [],
+    "mother": null,
+    "father": null,
+    "maternal_grandparents": [
+      {
+        "id": "c-1736082958149",
+        "name": "c",
+        "relation": "parent",
+        "is_alive": true,
+        "share": 500.0,
+        "branch": "maternal",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      }
+    ],
+    "paternal_grandparents": [
+      {
+        "id": "cc-1736082972554",
+        "name": "cc",
+        "relation": "parent",
+        "is_alive": true,
+        "share": 500.0,
+        "branch": "paternal",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      }
+    ]
+  }
+}
+2025-01-05 16:16:13,776 - INFO - Response 1736082973773: Completed in 0.002s
+2025-01-05 16:16:14,628 - INFO - Request 1736082974628: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 16:16:14,628 - INFO - Request 1736082974628 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '490', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 16:16:14,628 - INFO - Request 1736082974628 Body: {"total_value":1000,"family_tree":{"spouse":null,"children":[],"mother":null,"father":null,"maternal_grandparents":[{"id":"c-1736082958149","name":"c","relation":"parent","is_alive":true,"share":500,"branch":"maternal","parent_id":null,"children":[],"generation":null,"parent_type":null}],"paternal_grandparents":[{"id":"cc-1736082972554","name":"cc","relation":"parent","is_alive":true,"share":500,"branch":"paternal","parent_id":null,"children":[],"generation":null,"parent_type":null}]}}
+2025-01-05 16:16:14,629 - INFO - Calculation completed successfully
+2025-01-05 16:16:14,630 - INFO - Response 1736082974628: Status 200
+2025-01-05 16:16:14,630 - INFO - Response 1736082974628 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": null,
+    "children": [],
+    "mother": null,
+    "father": null,
+    "maternal_grandparents": [
+      {
+        "id": "c-1736082958149",
+        "name": "c",
+        "relation": "parent",
+        "is_alive": true,
+        "share": 500.0,
+        "branch": "maternal",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      }
+    ],
+    "paternal_grandparents": [
+      {
+        "id": "cc-1736082972554",
+        "name": "cc",
+        "relation": "parent",
+        "is_alive": true,
+        "share": 500.0,
+        "branch": "paternal",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      }
+    ]
+  }
+}
+2025-01-05 16:16:14,630 - INFO - Response 1736082974628: Completed in 0.002s
+2025-01-05 16:16:14,816 - INFO - Request 1736082974816: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 16:16:14,816 - INFO - Request 1736082974816 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '490', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 16:16:14,816 - INFO - Request 1736082974816 Body: {"total_value":1000,"family_tree":{"spouse":null,"children":[],"mother":null,"father":null,"maternal_grandparents":[{"id":"c-1736082958149","name":"c","relation":"parent","is_alive":true,"share":500,"branch":"maternal","parent_id":null,"children":[],"generation":null,"parent_type":null}],"paternal_grandparents":[{"id":"cc-1736082972554","name":"cc","relation":"parent","is_alive":true,"share":500,"branch":"paternal","parent_id":null,"children":[],"generation":null,"parent_type":null}]}}
+2025-01-05 16:16:14,817 - INFO - Calculation completed successfully
+2025-01-05 16:16:14,817 - INFO - Response 1736082974816: Status 200
+2025-01-05 16:16:14,817 - INFO - Response 1736082974816 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": null,
+    "children": [],
+    "mother": null,
+    "father": null,
+    "maternal_grandparents": [
+      {
+        "id": "c-1736082958149",
+        "name": "c",
+        "relation": "parent",
+        "is_alive": true,
+        "share": 500.0,
+        "branch": "maternal",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      }
+    ],
+    "paternal_grandparents": [
+      {
+        "id": "cc-1736082972554",
+        "name": "cc",
+        "relation": "parent",
+        "is_alive": true,
+        "share": 500.0,
+        "branch": "paternal",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      }
+    ]
+  }
+}
+2025-01-05 16:16:14,818 - INFO - Response 1736082974816: Completed in 0.001s
+2025-01-05 17:06:12,326 - INFO - Request 1736085972326: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 17:06:12,327 - INFO - Request 1736085972326 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '422', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 17:06:12,327 - INFO - Request 1736085972326 Body: {"total_value":1000,"family_tree":{"children":[],"mother":{"id":"asd-1736085944103","name":"asd","relation":"parent","is_alive":true,"parent_type":"mother"},"father":{"id":"asdasd-1736085968229","name":"asdasd","relation":"parent","is_alive":false,"parent_type":"father","children":[{"id":"asdasd-1736085957359","name":"asdasd","relation":"parent","is_alive":true}]},"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 17:06:12,331 - INFO - Calculation completed successfully
+2025-01-05 17:06:12,333 - INFO - Response 1736085972326: Status 200
+2025-01-05 17:06:12,333 - INFO - Response 1736085972326 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": null,
+    "children": [],
+    "mother": {
+      "id": "asd-1736085944103",
+      "name": "asd",
+      "relation": "parent",
+      "is_alive": true,
+      "share": 1000.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null,
+      "parent_type": "mother"
+    },
+    "father": {
+      "id": "asdasd-1736085968229",
+      "name": "asdasd",
+      "relation": "parent",
+      "is_alive": false,
+      "share": 0.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [
+        {
+          "id": "asdasd-1736085957359",
+          "name": "asdasd",
+          "relation": "parent",
+          "is_alive": true,
+          "share": 0.0,
+          "branch": "direct",
+          "parent_id": null,
+          "children": [],
+          "generation": null,
+          "parent_type": null
+        }
+      ],
+      "generation": null,
+      "parent_type": "father"
+    },
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 17:06:12,334 - INFO - Response 1736085972326: Completed in 0.007s
+2025-01-05 17:22:04,457 - INFO - Request 1736086924457: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 17:22:04,458 - INFO - Request 1736086924457 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '330', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 17:22:04,458 - INFO - Request 1736086924457 Body: {"total_value":1000,"family_tree":{"children":[],"mother":{"id":"meryem-1736086921745","name":"meryem","relation":"parent","is_alive":true,"parent_type":"mother"},"father":{"id":"abdul-1736086903563","name":"abdul","relation":"parent","is_alive":true,"parent_type":"father"},"maternal_grandparents":[],"paternal_grandparents":[]}}
+2025-01-05 17:22:04,459 - INFO - Calculation completed successfully
+2025-01-05 17:22:04,459 - INFO - Response 1736086924457: Status 200
+2025-01-05 17:22:04,460 - INFO - Response 1736086924457 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": null,
+    "children": [],
+    "mother": {
+      "id": "meryem-1736086921745",
+      "name": "meryem",
+      "relation": "parent",
+      "is_alive": true,
+      "share": 500.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null,
+      "parent_type": "mother"
+    },
+    "father": {
+      "id": "abdul-1736086903563",
+      "name": "abdul",
+      "relation": "parent",
+      "is_alive": true,
+      "share": 500.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null,
+      "parent_type": "father"
+    },
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 17:22:04,460 - INFO - Response 1736086924457: Completed in 0.003s
+2025-01-05 17:26:31,139 - INFO - Request 1736087191139: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 17:26:31,140 - INFO - Request 1736087191139 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '346', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 17:26:31,141 - INFO - Request 1736087191139 Body: {"total_value":1000,"family_tree":{"children":[{"id":"celil-1736087186341","name":"celil","relation":"child","is_alive":true},{"id":"jak-1736087190158","name":"jak","relation":"child","is_alive":true}],"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"marin-1736087181206","name":"marin","relation":"spouse","is_alive":true}}}
+2025-01-05 17:26:31,141 - INFO - Calculation completed successfully
+2025-01-05 17:26:31,142 - INFO - Response 1736087191139: Status 200
+2025-01-05 17:26:31,143 - INFO - Response 1736087191139 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "marin-1736087181206",
+      "name": "marin",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null,
+      "parent_type": null
+    },
+    "children": [
+      {
+        "id": "celil-1736087186341",
+        "name": "celil",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      },
+      {
+        "id": "jak-1736087190158",
+        "name": "jak",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      }
+    ],
+    "mother": null,
+    "father": null,
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 17:26:31,143 - INFO - Response 1736087191139: Completed in 0.003s
+2025-01-05 17:28:09,602 - INFO - Request 1736087289601: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 17:28:09,602 - INFO - Request 1736087289601 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '749', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 17:28:09,603 - INFO - Request 1736087289601 Body: {"total_value":1000,"family_tree":{"children":[{"id":"celil-1736087200056","name":"celil","relation":"child","is_alive":true},{"id":"jak-1736087283562","name":"jak","relation":"child","is_alive":false,"children":[{"id":"j1-1736087209279","name":"j1","relation":"child","is_alive":true},{"id":"j2-1736087213656","name":"j2","relation":"child","is_alive":true},{"id":"j3n-1736087280949","name":"j3n","relation":"child","is_alive":false,"children":[{"id":"j3n1-1736087274554","name":"j3n1","relation":"child","is_alive":true},{"id":"j3n2-1736087279049","name":"j3n2","relation":"child","is_alive":true}]}]}],"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"marin-1736087196641","name":"marin","relation":"spouse","is_alive":true}}}
+2025-01-05 17:28:09,605 - INFO - Calculation completed successfully
+2025-01-05 17:28:09,606 - INFO - Response 1736087289601: Status 200
+2025-01-05 17:28:09,607 - INFO - Response 1736087289601 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "marin-1736087196641",
+      "name": "marin",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null,
+      "parent_type": null
+    },
+    "children": [
+      {
+        "id": "celil-1736087200056",
+        "name": "celil",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      },
+      {
+        "id": "jak-1736087283562",
+        "name": "jak",
+        "relation": "child",
+        "is_alive": false,
+        "share": 0.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [
+          {
+            "id": "j1-1736087209279",
+            "name": "j1",
+            "relation": "child",
+            "is_alive": true,
+            "share": 125.0,
+            "branch": "direct",
+            "parent_id": null,
+            "children": [],
+            "generation": null,
+            "parent_type": null
+          },
+          {
+            "id": "j2-1736087213656",
+            "name": "j2",
+            "relation": "child",
+            "is_alive": true,
+            "share": 125.0,
+            "branch": "direct",
+            "parent_id": null,
+            "children": [],
+            "generation": null,
+            "parent_type": null
+          },
+          {
+            "id": "j3n-1736087280949",
+            "name": "j3n",
+            "relation": "child",
+            "is_alive": false,
+            "share": 0.0,
+            "branch": "direct",
+            "parent_id": null,
+            "children": [
+              {
+                "id": "j3n1-1736087274554",
+                "name": "j3n1",
+                "relation": "child",
+                "is_alive": true,
+                "share": 62.5,
+                "branch": "direct",
+                "parent_id": null,
+                "children": [],
+                "generation": null,
+                "parent_type": null
+              },
+              {
+                "id": "j3n2-1736087279049",
+                "name": "j3n2",
+                "relation": "child",
+                "is_alive": true,
+                "share": 62.5,
+                "branch": "direct",
+                "parent_id": null,
+                "children": [],
+                "generation": null,
+                "parent_type": null
+              }
+            ],
+            "generation": null,
+            "parent_type": null
+          }
+        ],
+        "generation": null,
+        "parent_type": null
+      }
+    ],
+    "mother": null,
+    "father": null,
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 17:28:09,607 - INFO - Response 1736087289601: Completed in 0.004s
+2025-01-05 17:29:57,455 - INFO - Request 1736087397455: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 17:29:57,455 - INFO - Request 1736087397455 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '773', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 17:29:57,456 - INFO - Request 1736087397455 Body: {"total_value":1000,"family_tree":{"children":[],"mother":{"id":"meryem-1736087346112","name":"meryem","relation":"parent","is_alive":true,"parent_type":"mother"},"father":{"id":"abdul-1736087390414","name":"abdul","relation":"parent","is_alive":false,"parent_type":"father","children":[{"id":"fehmi-1736087354856","name":"fehmi","relation":"parent","is_alive":true},{"id":"johnny-1736087379679","name":"johnny","relation":"parent","is_alive":false,"children":[{"id":"john1c-1736087374168","name":"john1c","relation":"parent","is_alive":true},{"id":"john2c-1736087378725","name":"john2c","relation":"parent","is_alive":true}]}]},"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"marin-1736087331805","name":"marin","relation":"spouse","is_alive":true}}}
+2025-01-05 17:29:57,457 - INFO - Calculation completed successfully
+2025-01-05 17:29:57,458 - INFO - Response 1736087397455: Status 200
+2025-01-05 17:29:57,459 - INFO - Response 1736087397455 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "marin-1736087331805",
+      "name": "marin",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 500.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null,
+      "parent_type": null
+    },
+    "children": [],
+    "mother": {
+      "id": "meryem-1736087346112",
+      "name": "meryem",
+      "relation": "parent",
+      "is_alive": true,
+      "share": 500.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null,
+      "parent_type": "mother"
+    },
+    "father": {
+      "id": "abdul-1736087390414",
+      "name": "abdul",
+      "relation": "parent",
+      "is_alive": false,
+      "share": 0.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [
+        {
+          "id": "fehmi-1736087354856",
+          "name": "fehmi",
+          "relation": "parent",
+          "is_alive": true,
+          "share": 0.0,
+          "branch": "direct",
+          "parent_id": null,
+          "children": [],
+          "generation": null,
+          "parent_type": null
+        },
+        {
+          "id": "johnny-1736087379679",
+          "name": "johnny",
+          "relation": "parent",
+          "is_alive": false,
+          "share": 0.0,
+          "branch": "direct",
+          "parent_id": null,
+          "children": [
+            {
+              "id": "john1c-1736087374168",
+              "name": "john1c",
+              "relation": "parent",
+              "is_alive": true,
+              "share": 0.0,
+              "branch": "direct",
+              "parent_id": null,
+              "children": [],
+              "generation": null,
+              "parent_type": null
+            },
+            {
+              "id": "john2c-1736087378725",
+              "name": "john2c",
+              "relation": "parent",
+              "is_alive": true,
+              "share": 0.0,
+              "branch": "direct",
+              "parent_id": null,
+              "children": [],
+              "generation": null,
+              "parent_type": null
+            }
+          ],
+          "generation": null,
+          "parent_type": null
+        }
+      ],
+      "generation": null,
+      "parent_type": "father"
+    },
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 17:29:57,459 - INFO - Response 1736087397455: Completed in 0.003s
+2025-01-05 17:47:26,466 - INFO - Request 1736088446466: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 17:47:26,466 - INFO - Request 1736088446466 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '328', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 17:47:26,467 - INFO - Request 1736088446466 Body: {"total_value":1000,"family_tree":{"children":[{"id":"j-1736088441775","name":"j","relation":"child","is_alive":true},{"id":"c1-1736088444962","name":"c1","relation":"child","is_alive":true}],"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"m-1736088437472","name":"m","relation":"spouse","is_alive":true}}}
+2025-01-05 17:47:26,470 - INFO - Calculation completed successfully
+2025-01-05 17:47:26,470 - INFO - Response 1736088446466: Status 200
+2025-01-05 17:47:26,471 - INFO - Response 1736088446466 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "m-1736088437472",
+      "name": "m",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null,
+      "parent_type": null
+    },
+    "children": [
+      {
+        "id": "j-1736088441775",
+        "name": "j",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      },
+      {
+        "id": "c1-1736088444962",
+        "name": "c1",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      }
+    ],
+    "mother": null,
+    "father": null,
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 17:47:26,471 - INFO - Response 1736088446466: Completed in 0.004s
+2025-01-05 17:48:57,851 - INFO - Request 1736088537851: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 17:48:57,852 - INFO - Request 1736088537851 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '757', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 17:48:57,852 - INFO - Request 1736088537851 Body: {"total_value":1000,"family_tree":{"children":[],"mother":{"id":"meryem-1736088520685","name":"meryem","relation":"parent","is_alive":false,"parent_type":"mother","children":[{"id":"fehmi-1736088493887","name":"fehmi","relation":"parent","is_alive":true},{"id":"john-1736088517795","name":"john","relation":"parent","is_alive":false,"children":[{"id":"john1-1736088510639","name":"john1","relation":"parent","is_alive":true},{"id":"john2-1736088514779","name":"john2","relation":"parent","is_alive":true}]}]},"father":{"id":"abdul-1736088477905","name":"abdul","relation":"parent","is_alive":true,"parent_type":"father"},"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"m-1736088453660","name":"m","relation":"spouse","is_alive":true}}}
+2025-01-05 17:48:57,853 - INFO - Calculation completed successfully
+2025-01-05 17:48:57,854 - INFO - Response 1736088537851: Status 200
+2025-01-05 17:48:57,854 - INFO - Response 1736088537851 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "m-1736088453660",
+      "name": "m",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 1000.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null,
+      "parent_type": null
+    },
+    "children": [],
+    "mother": {
+      "id": "meryem-1736088520685",
+      "name": "meryem",
+      "relation": "parent",
+      "is_alive": false,
+      "share": 0.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [
+        {
+          "id": "fehmi-1736088493887",
+          "name": "fehmi",
+          "relation": "parent",
+          "is_alive": true,
+          "share": -83.33,
+          "branch": "direct",
+          "parent_id": null,
+          "children": [],
+          "generation": null,
+          "parent_type": null
+        },
+        {
+          "id": "john-1736088517795",
+          "name": "john",
+          "relation": "parent",
+          "is_alive": false,
+          "share": 0.0,
+          "branch": "direct",
+          "parent_id": null,
+          "children": [
+            {
+              "id": "john1-1736088510639",
+              "name": "john1",
+              "relation": "parent",
+              "is_alive": true,
+              "share": -41.67,
+              "branch": "direct",
+              "parent_id": null,
+              "children": [],
+              "generation": null,
+              "parent_type": null
+            },
+            {
+              "id": "john2-1736088514779",
+              "name": "john2",
+              "relation": "parent",
+              "is_alive": true,
+              "share": -41.67,
+              "branch": "direct",
+              "parent_id": null,
+              "children": [],
+              "generation": null,
+              "parent_type": null
+            }
+          ],
+          "generation": null,
+          "parent_type": null
+        }
+      ],
+      "generation": null,
+      "parent_type": "mother"
+    },
+    "father": {
+      "id": "abdul-1736088477905",
+      "name": "abdul",
+      "relation": "parent",
+      "is_alive": true,
+      "share": 166.67,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null,
+      "parent_type": "father"
+    },
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 17:48:57,854 - INFO - Response 1736088537851: Completed in 0.002s
+2025-01-05 17:54:28,591 - INFO - Request 1736088868591: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 17:54:28,591 - INFO - Request 1736088868591 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '330', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 17:54:28,592 - INFO - Request 1736088868591 Body: {"total_value":1000,"family_tree":{"children":[{"id":"c1-1736088864200","name":"c1","relation":"child","is_alive":true},{"id":"j1-1736088867558","name":"j1","relation":"child","is_alive":true}],"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"m-1736088861602","name":"m","relation":"spouse","is_alive":true}}}
+2025-01-05 17:54:28,594 - INFO - Calculation completed successfully
+2025-01-05 17:54:28,595 - INFO - Response 1736088868591: Status 200
+2025-01-05 17:54:28,595 - INFO - Response 1736088868591 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "m-1736088861602",
+      "name": "m",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null,
+      "parent_type": null
+    },
+    "children": [
+      {
+        "id": "c1-1736088864200",
+        "name": "c1",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      },
+      {
+        "id": "j1-1736088867558",
+        "name": "j1",
+        "relation": "child",
+        "is_alive": true,
+        "share": 375.0,
+        "branch": "direct",
+        "parent_id": null,
+        "children": [],
+        "generation": null,
+        "parent_type": null
+      }
+    ],
+    "mother": null,
+    "father": null,
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 17:54:28,596 - INFO - Response 1736088868591: Completed in 0.003s
+2025-01-05 17:55:42,332 - INFO - Request 1736088942332: POST http://127.0.0.1:8000/calculate-inheritance
+2025-01-05 17:55:42,332 - INFO - Request 1736088942332 Headers: {'host': '127.0.0.1:8000', 'connection': 'keep-alive', 'content-length': '771', 'sec-ch-ua-platform': '"macOS"', 'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36', 'accept': 'application/json, text/plain, */*', 'sec-ch-ua': '"Google Chrome";v="131", "Chromium";v="131", "Not_A Brand";v="24"', 'content-type': 'application/json', 'dnt': '1', 'sec-ch-ua-mobile': '?0', 'origin': 'http://localhost:5173', 'sec-fetch-site': 'cross-site', 'sec-fetch-mode': 'cors', 'sec-fetch-dest': 'empty', 'referer': 'http://localhost:5173/', 'accept-encoding': 'gzip, deflate, br, zstd', 'accept-language': 'en-US,en;q=0.9,tr-TR;q=0.8,tr;q=0.7'}
+2025-01-05 17:55:42,332 - INFO - Request 1736088942332 Body: {"total_value":1000,"family_tree":{"children":[],"mother":{"id":"meryem-1736088939806","name":"meryem","relation":"parent","is_alive":true,"parent_type":"mother"},"father":{"id":"abdul-1736088918645","name":"abdul","relation":"parent","is_alive":false,"parent_type":"father","children":[{"id":"fehmi-1736088891362","name":"fehmi","relation":"parent","is_alive":true},{"id":"johnn-1736088917385","name":"johnn","relation":"parent","is_alive":false,"children":[{"id":"johnc1-1736088912465","name":"johnc1","relation":"parent","is_alive":true},{"id":"johnc2-1736088916630","name":"johnc2","relation":"parent","is_alive":true}]}]},"maternal_grandparents":[],"paternal_grandparents":[],"spouse":{"id":"marin-1736088879361","name":"marin","relation":"spouse","is_alive":true}}}
+2025-01-05 17:55:42,333 - INFO - Calculation completed successfully
+2025-01-05 17:55:42,335 - INFO - Response 1736088942332: Status 200
+2025-01-05 17:55:42,336 - INFO - Response 1736088942332 Body: {
+  "total_value": 1000.0,
+  "family_tree": {
+    "spouse": {
+      "id": "marin-1736088879361",
+      "name": "marin",
+      "relation": "spouse",
+      "is_alive": true,
+      "share": 250.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null,
+      "parent_type": null
+    },
+    "children": [],
+    "mother": {
+      "id": "meryem-1736088939806",
+      "name": "meryem",
+      "relation": "parent",
+      "is_alive": true,
+      "share": 166.67,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [],
+      "generation": null,
+      "parent_type": "mother"
+    },
+    "father": {
+      "id": "abdul-1736088918645",
+      "name": "abdul",
+      "relation": "parent",
+      "is_alive": false,
+      "share": 0.0,
+      "branch": "direct",
+      "parent_id": null,
+      "children": [
+        {
+          "id": "fehmi-1736088891362",
+          "name": "fehmi",
+          "relation": "parent",
+          "is_alive": true,
+          "share": 291.67,
+          "branch": "direct",
+          "parent_id": null,
+          "children": [],
+          "generation": null,
+          "parent_type": null
+        },
+        {
+          "id": "johnn-1736088917385",
+          "name": "johnn",
+          "relation": "parent",
+          "is_alive": false,
+          "share": 0.0,
+          "branch": "direct",
+          "parent_id": null,
+          "children": [
+            {
+              "id": "johnc1-1736088912465",
+              "name": "johnc1",
+              "relation": "parent",
+              "is_alive": true,
+              "share": 145.83,
+              "branch": "direct",
+              "parent_id": null,
+              "children": [],
+              "generation": null,
+              "parent_type": null
+            },
+            {
+              "id": "johnc2-1736088916630",
+              "name": "johnc2",
+              "relation": "parent",
+              "is_alive": true,
+              "share": 145.83,
+              "branch": "direct",
+              "parent_id": null,
+              "children": [],
+              "generation": null,
+              "parent_type": null
+            }
+          ],
+          "generation": null,
+          "parent_type": null
+        }
+      ],
+      "generation": null,
+      "parent_type": "father"
+    },
+    "maternal_grandparents": [],
+    "paternal_grandparents": []
+  }
+}
+2025-01-05 17:55:42,336 - INFO - Response 1736088942332: Completed in 0.003s
