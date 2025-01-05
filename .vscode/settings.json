@@ -8,6 +8,5 @@
     "python.analysis.extraPaths": [
         "./backend"
     ],
-    "python.defaultInterpreterPath": "${workspaceFolder}/backend/venv/bin/python",
-    "python.envFile": "${workspaceFolder}/backend/.env"
+    "python.defaultInterpreterPath": "${workspaceFolder}/backend/venv/bin/python"
 } 
