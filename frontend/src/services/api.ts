@@ -1,26 +1,27 @@
 import axios from 'axios';
-import { InheritanceRequest, InheritanceResponse } from '../types';
+import { InheritanceRequest, InheritanceResponse, RelativeType } from '../types';
 
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'http://localhost:8000';  // FastAPI default port
 
 const api = axios.create({
-    baseURL: API_BASE_URL,
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    withCredentials: true,
+  baseURL: API_BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
-export const calculateInheritance = async (request: InheritanceRequest): Promise<InheritanceResponse> => {
-    try {
-        const response = await api.post<InheritanceResponse>('/calculate', request);
-        return response.data;
-    } catch (error) {
-        if (axios.isAxiosError(error)) {
-            const errorMessage = error.response?.data?.detail || 'Failed to calculate inheritance';
-            console.error('API Error:', error.response?.data);
-            throw new Error(errorMessage);
-        }
-        throw error;
-    }
-}; 
+export const inheritanceApi = {
+  // Get available relative types
+  getRelativeTypes: async (): Promise<RelativeType[]> => {
+    const response = await api.get('/relative-types');
+    return response.data;
+  },
+
+  // Calculate inheritance distribution
+  calculateInheritance: async (request: InheritanceRequest): Promise<InheritanceResponse> => {
+    const response = await api.post('/calculate', request);
+    return response.data;
+  },
+};
+
+export default inheritanceApi; 
