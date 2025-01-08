@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Switch } from '@headlessui/react';
-import { FamilyMember, InheritanceCalculation } from '../../types';
+import { FamilyMember } from '../../types';
 import { useFamilyTree } from '../../context/FamilyTreeContext';
 
 const ChildForm = ({ member, onUpdate }: { member: FamilyMember; onUpdate: (updates: Partial<FamilyMember>) => void }) => {
@@ -91,7 +91,12 @@ const ChildForm = ({ member, onUpdate }: { member: FamilyMember; onUpdate: (upda
 
 const GrandparentsForm = () => {
   const navigate = useNavigate();
-  const { familyTree, addFamilyMember, updateFamilyMember, removeFamilyMember } = useFamilyTree();
+  const { familyTree, addFamilyMember, updateFamilyMember, removeFamilyMember, calculateInheritance } = useFamilyTree();
+  const [grandparentName, setGrandparentName] = useState('');
+  const [isAlive, setIsAlive] = useState(true);
+  const [side, setSide] = useState<'paternal' | 'maternal'>('paternal');
+  const [isCalculating, setIsCalculating] = useState(false);
+  const [calculationError, setCalculationError] = useState<string | null>(null);
 
   useEffect(() => {
     // Redirect to children page if there are any children
@@ -99,12 +104,6 @@ const GrandparentsForm = () => {
       navigate('/children');
     }
   }, [familyTree.deceased.children.length, navigate]);
-
-  const [grandparentName, setGrandparentName] = useState('');
-  const [isAlive, setIsAlive] = useState(true);
-  const [side, setSide] = useState<'paternal' | 'maternal'>('paternal');
-  const [calculationResult, setCalculationResult] = useState<InheritanceCalculation | null>(null);
-  const [calculationError, setCalculationError] = useState<string | null>(null);
 
   const handleAddGrandparent = () => {
     if (!grandparentName.trim()) return;
@@ -135,23 +134,13 @@ const GrandparentsForm = () => {
   const handleCalculate = async () => {
     try {
       setCalculationError(null);
-      const response = await fetch('/api/calculate-inheritance', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(familyTree),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to calculate inheritance');
-      }
-
-      const result = await response.json();
-      setCalculationResult(result);
+      setIsCalculating(true);
+      await calculateInheritance();
     } catch (error) {
       console.error('Error calculating inheritance:', error);
       setCalculationError('Failed to calculate inheritance. Please try again.');
+    } finally {
+      setIsCalculating(false);
     }
   };
 
@@ -162,29 +151,20 @@ const GrandparentsForm = () => {
   const currentSideGrandparents = side === 'paternal' ? paternalGrandparents : maternalGrandparents;
   const isCurrentSideFull = currentSideGrandparents.length >= 2;
 
+  // Check if any grandparents are added
+  const shouldShowCalculateButton = familyTree.deceased.grandparents.length > 0;
+
   return (
     <div className="space-y-8 divide-y divide-gray-200">
       <div className="space-y-6">
         <div>
           <h3 className="text-lg font-medium leading-6 text-gray-900">Grandparents Information</h3>
           <p className="mt-1 text-sm text-gray-500">
-            Please provide information about the grandparents. Maximum two grandparents per side (paternal/maternal).
+            Please provide information about the grandparents.
           </p>
         </div>
 
         <div className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700">Side</label>
-            <select
-              value={side}
-              onChange={(e) => setSide(e.target.value as 'paternal' | 'maternal')}
-              className="form-input mt-1"
-            >
-              <option value="paternal">Paternal (Father's Parents) {paternalGrandparents.length}/2</option>
-              <option value="maternal">Maternal (Mother's Parents) {maternalGrandparents.length}/2</option>
-            </select>
-          </div>
-
           <div>
             <label htmlFor="grandparent-name" className="block text-sm font-medium text-gray-700">
               Grandparent Name
@@ -198,11 +178,30 @@ const GrandparentsForm = () => {
               placeholder="Enter grandparent name"
               disabled={isCurrentSideFull}
             />
-            {isCurrentSideFull && (
-              <p className="mt-1 text-sm text-red-500">
-                Maximum number of {side} grandparents reached (2/2)
-              </p>
-            )}
+          </div>
+
+          <div className="flex items-center space-x-4">
+            <span className="text-sm font-medium text-gray-700">Side</span>
+            <div className="flex items-center space-x-4">
+              <label className="inline-flex items-center">
+                <input
+                  type="radio"
+                  className="form-radio"
+                  checked={side === 'paternal'}
+                  onChange={() => setSide('paternal')}
+                />
+                <span className="ml-2">Paternal</span>
+              </label>
+              <label className="inline-flex items-center">
+                <input
+                  type="radio"
+                  className="form-radio"
+                  checked={side === 'maternal'}
+                  onChange={() => setSide('maternal')}
+                />
+                <span className="ml-2">Maternal</span>
+              </label>
+            </div>
           </div>
 
           <div className="flex items-center space-x-4">
@@ -228,6 +227,10 @@ const GrandparentsForm = () => {
             </Switch.Group>
           </div>
 
+          {calculationError && (
+            <div className="text-sm text-red-600">{calculationError}</div>
+          )}
+
           <div className="flex justify-between">
             <button
               type="button"
@@ -249,9 +252,9 @@ const GrandparentsForm = () => {
                 type="button"
                 onClick={handleCalculate}
                 className="btn-primary"
-                disabled={familyTree.deceased.grandparents.length === 0}
+                disabled={!shouldShowCalculateButton || isCalculating}
               >
-                Calculate Inheritance
+                {isCalculating ? 'Calculating...' : 'Calculate Inheritance'}
               </button>
             </div>
           </div>
@@ -290,7 +293,7 @@ const GrandparentsForm = () => {
                   <div className="animate-slide-down">
                     <ChildForm
                       member={grandparent}
-                      onUpdate={(updates) => updateFamilyMember(grandparent.id, updates)}
+                      onUpdate={(updates: Partial<FamilyMember>) => updateFamilyMember(grandparent.id, updates)}
                     />
                   </div>
                 )}
@@ -332,53 +335,12 @@ const GrandparentsForm = () => {
                   <div className="animate-slide-down">
                     <ChildForm
                       member={grandparent}
-                      onUpdate={(updates) => updateFamilyMember(grandparent.id, updates)}
+                      onUpdate={(updates: Partial<FamilyMember>) => updateFamilyMember(grandparent.id, updates)}
                     />
                   </div>
                 )}
               </div>
             ))}
-          </div>
-        </div>
-      )}
-
-      {calculationResult && (
-        <div className="pt-6">
-          <h4 className="text-lg font-medium text-gray-900">Inheritance Calculation Results</h4>
-          <div className="mt-4 bg-white shadow overflow-hidden sm:rounded-lg">
-            <div className="px-4 py-5 sm:p-6">
-              <dl className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
-                <div className="sm:col-span-2">
-                  <dt className="text-sm font-medium text-gray-500">Total Estate</dt>
-                  <dd className="mt-1 text-sm text-gray-900">
-                    ${calculationResult.totalEstate.toLocaleString()}
-                  </dd>
-                </div>
-                {Object.entries(calculationResult.shares).map(([id, share]) => (
-                  <div key={id}>
-                    <dt className="text-sm font-medium text-gray-500">{share.relationship}</dt>
-                    <dd className="mt-1 text-sm text-gray-900">
-                      ${share.amount.toLocaleString()} ({share.percentage}%)
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {calculationError && (
-        <div className="pt-6">
-          <div className="rounded-md bg-red-50 p-4">
-            <div className="flex">
-              <div className="ml-3">
-                <h3 className="text-sm font-medium text-red-800">Error</h3>
-                <div className="mt-2 text-sm text-red-700">
-                  <p>{calculationError}</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       )}

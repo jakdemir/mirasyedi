@@ -65,6 +65,7 @@ export const transformFamilyTreeForApi = (familyTree: InheritanceState, estateVa
     return node;
   };
 
+  // Create the root deceased person node
   const rootNode: ApiFamilyNode = {
     person: {
       id: 'deceased',
@@ -75,6 +76,7 @@ export const transformFamilyTreeForApi = (familyTree: InheritanceState, estateVa
     children: familyTree.deceased.children.map(child => transformMember(child, 'deceased')),
   };
 
+  // Add spouse if exists
   if (familyTree.deceased.spouse) {
     rootNode.spouse = {
       id: familyTree.deceased.spouse.id,
@@ -88,12 +90,82 @@ export const transformFamilyTreeForApi = (familyTree: InheritanceState, estateVa
     };
   }
 
+  // Add parents if they exist
   if (familyTree.deceased.parents.length > 0) {
     rootNode.parents = {};
     familyTree.deceased.parents.forEach((parent, index) => {
       const parentType = index === 0 ? 'father' : 'mother';
-      rootNode.parents![parentType] = transformMember(parent, 'deceased');
+      const parentNode = transformMember(parent, 'deceased');
+
+      // Add grandparents for this parent if they exist
+      const parentGrandparents = familyTree.deceased.grandparents.filter(g => {
+        if (parentType === 'father') {
+          return g.side === 'paternal';
+        } else {
+          return g.side === 'maternal';
+        }
+      });
+
+      if (parentGrandparents.length > 0) {
+        parentNode.parents = {};
+        parentGrandparents.forEach((grandparent, gIndex) => {
+          const grandparentType = gIndex === 0 ? 'father' : 'mother';
+          parentNode.parents![grandparentType] = transformMember(grandparent, parent.id);
+        });
+      }
+
+      rootNode.parents![parentType] = parentNode;
     });
+  }
+  // If there are no parents but there are grandparents, create parent nodes
+  else if (familyTree.deceased.grandparents.length > 0) {
+    rootNode.parents = {};
+    
+    // Create father node if there are paternal grandparents
+    const paternalGrandparents = familyTree.deceased.grandparents.filter(g => g.side === 'paternal');
+    if (paternalGrandparents.length > 0) {
+      const fatherNode: ApiFamilyNode = {
+        person: {
+          id: 'father',
+          name: 'Father',
+          is_alive: false,
+          parent_id: 'deceased',
+          share: 0,
+        },
+        children: [],
+        parents: {},
+      };
+
+      paternalGrandparents.forEach((grandparent, index) => {
+        const grandparentType = index === 0 ? 'father' : 'mother';
+        fatherNode.parents![grandparentType] = transformMember(grandparent, 'father');
+      });
+
+      rootNode.parents['father'] = fatherNode;
+    }
+
+    // Create mother node if there are maternal grandparents
+    const maternalGrandparents = familyTree.deceased.grandparents.filter(g => g.side === 'maternal');
+    if (maternalGrandparents.length > 0) {
+      const motherNode: ApiFamilyNode = {
+        person: {
+          id: 'mother',
+          name: 'Mother',
+          is_alive: false,
+          parent_id: 'deceased',
+          share: 0,
+        },
+        children: [],
+        parents: {},
+      };
+
+      maternalGrandparents.forEach((grandparent, index) => {
+        const grandparentType = index === 0 ? 'father' : 'mother';
+        motherNode.parents![grandparentType] = transformMember(grandparent, 'mother');
+      });
+
+      rootNode.parents['mother'] = motherNode;
+    }
   }
 
   return {
