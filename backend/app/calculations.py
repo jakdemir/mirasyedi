@@ -96,7 +96,7 @@ class InheritanceCalculator:
         spouse_share = 0.25 if root.spouse and root.spouse.is_alive else 0
 
         if spouse_share > 0:
-            root.spouse.share = round(self.total_value * spouse_share)
+            root.spouse.share = round(self.total_value * spouse_share, 2)
             self.result.total_distributed += root.spouse.share
 
         remaining_amount = self.total_value - self.result.total_distributed
@@ -116,9 +116,9 @@ class InheritanceCalculator:
             for i, branch in enumerate(valid_branches):
                 # Last branch gets the remainder to ensure total is exact
                 if i == len(valid_branches) - 1:
-                    branch_amount = remaining_amount - total_distributed
+                    branch_amount = round(remaining_amount - total_distributed, 2)
                 else:
-                    branch_amount = round(share_per_branch)
+                    branch_amount = round(share_per_branch, 2)
                     total_distributed += branch_amount
 
                 if branch.person.is_alive:
@@ -139,16 +139,15 @@ class InheritanceCalculator:
         if not valid_children:
             return
 
-        share_per_child = amount / len(valid_children)
-        total_distributed = 0
-
+        share_per_child = round(amount / len(valid_children), 2)
+        total_distributed = share_per_child * (len(valid_children) - 1)
+        
         for i, child in enumerate(valid_children):
-            # Last child gets the remainder to ensure total is exact
             if i == len(valid_children) - 1:
-                child_amount = amount - total_distributed
+                # Last child gets the exact remainder
+                child_amount = round(amount - total_distributed, 2)
             else:
-                child_amount = round(share_per_child)
-                total_distributed += child_amount
+                child_amount = share_per_child
 
             if child.person.is_alive:
                 child.person.share = child_amount
@@ -161,7 +160,7 @@ class InheritanceCalculator:
         spouse_share = 0.5 if root.spouse and root.spouse.is_alive else 0
 
         if spouse_share > 0:
-            root.spouse.share = round(self.total_value * spouse_share)
+            root.spouse.share = round(self.total_value * spouse_share, 2)
             self.result.total_distributed += root.spouse.share
 
         remaining_amount = self.total_value - self.result.total_distributed
@@ -181,13 +180,13 @@ class InheritanceCalculator:
             self._distribute_parent_share(
                 root.parents[ParentType.FATHER],
                 root.person.id,
-                paternal_amount
+                round(paternal_amount, 2)
             )
 
     def _distribute_parent_share(self, parent_node: FamilyNode, deceased_id: str, amount: float):
         """Distribute a parent's share to them or their descendants"""
         if parent_node.person and parent_node.person.is_alive:
-            parent_node.person.share = amount
+            parent_node.person.share = round(amount, 2)
             self.result.total_distributed += amount
             return
 
@@ -203,16 +202,14 @@ class InheritanceCalculator:
         if not valid_siblings:
             return
 
-        share_per_sibling = amount / len(valid_siblings)
-        total_distributed = 0
+        share_per_sibling = round(amount / len(valid_siblings), 2)
+        total_distributed = share_per_sibling * (len(valid_siblings) - 1)
 
         for i, sibling in enumerate(valid_siblings):
-            # Last sibling gets the remainder to ensure total is exact
             if i == len(valid_siblings) - 1:
-                sibling_amount = amount - total_distributed
+                sibling_amount = round(amount - total_distributed, 2)
             else:
-                sibling_amount = round(share_per_sibling, 2)
-                total_distributed += sibling_amount
+                sibling_amount = share_per_sibling
 
             if sibling.person.is_alive:
                 sibling.person.share = sibling_amount
@@ -225,7 +222,7 @@ class InheritanceCalculator:
         spouse_share = 0.75 if root.spouse and root.spouse.is_alive else 0
 
         if spouse_share > 0:
-            root.spouse.share = round(self.total_value * spouse_share)
+            root.spouse.share = round(self.total_value * spouse_share, 2)
             self.result.total_distributed += root.spouse.share
 
         remaining_amount = self.total_value - self.result.total_distributed
@@ -237,19 +234,19 @@ class InheritanceCalculator:
         if maternal_side and paternal_side:
             # Both sides exist, split remaining amount
             maternal_amount = remaining_amount / 2
-            paternal_amount = remaining_amount - round(maternal_amount)
+            paternal_amount = remaining_amount - round(maternal_amount, 2)
 
             # Distribute maternal side
-            self._distribute_grandparents_share(root.parents[ParentType.MOTHER], round(maternal_amount))
+            self._distribute_grandparents_share(root.parents[ParentType.MOTHER], round(maternal_amount, 2))
 
             # Distribute paternal side
-            self._distribute_grandparents_share(root.parents[ParentType.FATHER], paternal_amount)
+            self._distribute_grandparents_share(root.parents[ParentType.FATHER], round(paternal_amount, 2))
         elif maternal_side:
             # Only maternal side exists, give all remaining amount
-            self._distribute_grandparents_share(root.parents[ParentType.MOTHER], remaining_amount)
+            self._distribute_grandparents_share(root.parents[ParentType.MOTHER], round(remaining_amount, 2))
         elif paternal_side:
             # Only paternal side exists, give all remaining amount
-            self._distribute_grandparents_share(root.parents[ParentType.FATHER], remaining_amount)
+            self._distribute_grandparents_share(root.parents[ParentType.FATHER], round(remaining_amount, 2))
 
     def _distribute_grandparents_share(self, parent_node: FamilyNode, amount: float):
         """Distribute a side's share among grandparents or their children (uncles/aunts)"""
@@ -277,63 +274,59 @@ class InheritanceCalculator:
 
         if living_grandparents and living_uncles:
             # Split amount between grandparents and uncles/aunts
-            grandparent_share = amount / 2
-            uncle_share = amount - round(grandparent_share)
+            grandparent_share = round(amount / 2, 2)
+            uncle_share = round(amount - grandparent_share, 2)
 
             # Distribute grandparent share
-            share_per_grandparent = grandparent_share / len(living_grandparents)
-            total_distributed = 0
+            share_per_grandparent = round(grandparent_share / len(living_grandparents), 2)
+            total_distributed = share_per_grandparent * (len(living_grandparents) - 1)
 
             for i, grandparent in enumerate(living_grandparents):
                 if i == len(living_grandparents) - 1:
-                    share = round(grandparent_share) - total_distributed
+                    share = round(grandparent_share - total_distributed, 2)
                 else:
-                    share = round(share_per_grandparent)
-                    total_distributed += share
+                    share = share_per_grandparent
 
                 grandparent.person.share = share
                 self.result.total_distributed += share
 
             # Distribute uncle share
-            share_per_uncle = uncle_share / len(living_uncles)
-            total_distributed = 0
+            share_per_uncle = round(uncle_share / len(living_uncles), 2)
+            total_distributed = share_per_uncle * (len(living_uncles) - 1)
 
             for i, uncle in enumerate(living_uncles):
                 if i == len(living_uncles) - 1:
-                    share = uncle_share - total_distributed
+                    share = round(uncle_share - total_distributed, 2)
                 else:
-                    share = round(share_per_uncle)
-                    total_distributed += share
+                    share = share_per_uncle
 
                 uncle.person.share = share
                 self.result.total_distributed += share
 
         elif living_grandparents:
             # Only living grandparents get the share
-            share_per_grandparent = amount / len(living_grandparents)
-            total_distributed = 0
+            share_per_grandparent = round(amount / len(living_grandparents), 2)
+            total_distributed = share_per_grandparent * (len(living_grandparents) - 1)
 
             for i, grandparent in enumerate(living_grandparents):
                 if i == len(living_grandparents) - 1:
-                    share = amount - total_distributed
+                    share = round(amount - total_distributed, 2)
                 else:
-                    share = round(share_per_grandparent)
-                    total_distributed += share
+                    share = share_per_grandparent
 
                 grandparent.person.share = share
                 self.result.total_distributed += share
 
         elif living_uncles:
             # Only living uncles/aunts get the share
-            share_per_uncle = amount / len(living_uncles)
-            total_distributed = 0
+            share_per_uncle = round(amount / len(living_uncles), 2)
+            total_distributed = share_per_uncle * (len(living_uncles) - 1)
 
             for i, uncle in enumerate(living_uncles):
                 if i == len(living_uncles) - 1:
-                    share = amount - total_distributed
+                    share = round(amount - total_distributed, 2)
                 else:
-                    share = round(share_per_uncle)
-                    total_distributed += share
+                    share = share_per_uncle
 
                 uncle.person.share = share
                 self.result.total_distributed += share 
