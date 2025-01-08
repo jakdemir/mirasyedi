@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Switch } from '@headlessui/react';
-import { FamilyMember, InheritanceCalculation } from '../../types';
+import { FamilyMember } from '../../types';
 import { useFamilyTree } from '../../context/FamilyTreeContext';
 
 const ChildForm = ({ member, onUpdate }: { member: FamilyMember; onUpdate: (updates: Partial<FamilyMember>) => void }) => {
@@ -91,7 +91,11 @@ const ChildForm = ({ member, onUpdate }: { member: FamilyMember; onUpdate: (upda
 
 const ParentsForm = () => {
   const navigate = useNavigate();
-  const { familyTree, addFamilyMember, updateFamilyMember, removeFamilyMember } = useFamilyTree();
+  const { familyTree, addFamilyMember, updateFamilyMember, removeFamilyMember, calculateInheritance } = useFamilyTree();
+  const [parentName, setParentName] = useState('');
+  const [isAlive, setIsAlive] = useState(true);
+  const [isCalculating, setIsCalculating] = useState(false);
+  const [calculationError, setCalculationError] = useState<string | null>(null);
 
   useEffect(() => {
     // Redirect to children page if there are any children
@@ -99,11 +103,6 @@ const ParentsForm = () => {
       navigate('/children');
     }
   }, [familyTree.deceased.children.length, navigate]);
-
-  const [parentName, setParentName] = useState('');
-  const [isAlive, setIsAlive] = useState(true);
-  const [calculationResult, setCalculationResult] = useState<InheritanceCalculation | null>(null);
-  const [calculationError, setCalculationError] = useState<string | null>(null);
 
   const handleAddParent = () => {
     if (!parentName.trim()) return;
@@ -130,23 +129,13 @@ const ParentsForm = () => {
   const handleCalculate = async () => {
     try {
       setCalculationError(null);
-      const response = await fetch('/api/calculate-inheritance', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(familyTree),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to calculate inheritance');
-      }
-
-      const result = await response.json();
-      setCalculationResult(result);
+      setIsCalculating(true);
+      await calculateInheritance();
     } catch (error) {
       console.error('Error calculating inheritance:', error);
       setCalculationError('Failed to calculate inheritance. Please try again.');
+    } finally {
+      setIsCalculating(false);
     }
   };
 
@@ -202,6 +191,10 @@ const ParentsForm = () => {
             </Switch.Group>
           </div>
 
+          {calculationError && (
+            <div className="text-sm text-red-600">{calculationError}</div>
+          )}
+
           <div className="flex justify-between">
             <button
               type="button"
@@ -219,21 +212,22 @@ const ParentsForm = () => {
               >
                 Back
               </button>
-              {shouldShowCalculateButton ? (
-                <button
-                  type="button"
-                  onClick={handleCalculate}
-                  className="btn-primary"
-                >
-                  Calculate Inheritance
-                </button>
-              ) : (
+              {!shouldShowCalculateButton ? (
                 <button
                   type="button"
                   onClick={() => navigate('/grandparents')}
                   className="btn-primary"
                 >
                   Next: Grandparents
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={handleCalculate}
+                  className="btn-primary"
+                  disabled={isCalculating}
+                >
+                  {isCalculating ? 'Calculating...' : 'Calculate Inheritance'}
                 </button>
               )}
             </div>
@@ -271,53 +265,12 @@ const ParentsForm = () => {
                   <div className="animate-slide-down">
                     <ChildForm
                       member={parent}
-                      onUpdate={(updates) => updateFamilyMember(parent.id, updates)}
+                      onUpdate={(updates: Partial<FamilyMember>) => updateFamilyMember(parent.id, updates)}
                     />
                   </div>
                 )}
               </div>
             ))}
-          </div>
-        </div>
-      )}
-
-      {calculationResult && (
-        <div className="pt-6">
-          <h4 className="text-lg font-medium text-gray-900">Inheritance Calculation Results</h4>
-          <div className="mt-4 bg-white shadow overflow-hidden sm:rounded-lg">
-            <div className="px-4 py-5 sm:p-6">
-              <dl className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
-                <div className="sm:col-span-2">
-                  <dt className="text-sm font-medium text-gray-500">Total Estate</dt>
-                  <dd className="mt-1 text-sm text-gray-900">
-                    ${calculationResult.totalEstate.toLocaleString()}
-                  </dd>
-                </div>
-                {Object.entries(calculationResult.shares).map(([id, share]) => (
-                  <div key={id}>
-                    <dt className="text-sm font-medium text-gray-500">{share.relationship}</dt>
-                    <dd className="mt-1 text-sm text-gray-900">
-                      ${share.amount.toLocaleString()} ({share.percentage}%)
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {calculationError && (
-        <div className="pt-6">
-          <div className="rounded-md bg-red-50 p-4">
-            <div className="flex">
-              <div className="ml-3">
-                <h3 className="text-sm font-medium text-red-800">Error</h3>
-                <div className="mt-2 text-sm text-red-700">
-                  <p>{calculationError}</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       )}

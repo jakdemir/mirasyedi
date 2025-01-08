@@ -6,7 +6,7 @@ import { useFamilyTree } from '../../context/FamilyTreeContext';
 
 const SpouseForm = () => {
   const navigate = useNavigate();
-  const { familyTree, addFamilyMember, removeFamilyMember } = useFamilyTree();
+  const { familyTree, addFamilyMember, removeFamilyMember, estateValue, setEstateValue } = useFamilyTree();
   const [spouseName, setSpouseName] = useState('');
   const [isAlive, setIsAlive] = useState(true);
 
@@ -18,6 +18,7 @@ const SpouseForm = () => {
       name: spouseName.trim(),
       isAlive,
       type: 'spouse',
+      children: [],
     };
 
     addFamilyMember(newSpouse);
@@ -29,13 +30,39 @@ const SpouseForm = () => {
     removeFamilyMember(id);
   };
 
+  const handleEstateValueChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setEstateValue(value ? Number(value) : 0);
+  };
+
   return (
     <div className="space-y-8 divide-y divide-gray-200">
       <div className="space-y-6">
         <div>
+          <h3 className="text-lg font-medium leading-6 text-gray-900">Estate Information</h3>
+          <p className="mt-1 text-sm text-gray-500">
+            Please enter the total value of the estate.
+          </p>
+          <div className="mt-4">
+            <label htmlFor="estate-value" className="block text-sm font-medium text-gray-700">
+              Estate Value
+            </label>
+            <input
+              type="number"
+              id="estate-value"
+              value={estateValue || ''}
+              onChange={handleEstateValueChange}
+              className="form-input mt-1"
+              placeholder="Enter estate value"
+              min="0"
+            />
+          </div>
+        </div>
+
+        <div>
           <h3 className="text-lg font-medium leading-6 text-gray-900">Spouse Information</h3>
           <p className="mt-1 text-sm text-gray-500">
-            Please provide information about the spouse(s).
+            Please provide information about the spouse.
           </p>
         </div>
 
@@ -51,7 +78,7 @@ const SpouseForm = () => {
               onChange={(e) => setSpouseName(e.target.value)}
               className="form-input mt-1"
               placeholder="Enter spouse name"
-              disabled={familyTree.deceased.spouse !== undefined}
+              disabled={familyTree.deceased.spouse !== null}
             />
           </div>
 
@@ -83,7 +110,7 @@ const SpouseForm = () => {
               type="button"
               onClick={handleAddSpouse}
               className="btn-primary"
-              disabled={familyTree.deceased.spouse !== undefined}
+              disabled={familyTree.deceased.spouse !== null}
             >
               Add Spouse
             </button>
@@ -91,7 +118,7 @@ const SpouseForm = () => {
               type="button"
               onClick={() => navigate('/children')}
               className="btn-secondary"
-              disabled={familyTree.deceased.spouse === undefined}
+              disabled={!estateValue || estateValue <= 0}
             >
               Next: Children
             </button>
