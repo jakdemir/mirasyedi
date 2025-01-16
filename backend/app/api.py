@@ -22,7 +22,9 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "https://mirasyedi-ec74e.web.app",
-        "https://mirasyedi-ec74e.firebaseapp.com"
+        "https://mirasyedi-ec74e.firebaseapp.com",
+        "https://mirasyedi.com",
+        "https://www.mirasyedi.com"
     ],
     allow_credentials=True,
     allow_methods=["*"],
