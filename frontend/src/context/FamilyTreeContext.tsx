@@ -2,6 +2,8 @@ import { createContext, useContext, useState, ReactNode } from 'react';
 import { FamilyMember, InheritanceState } from '../types';
 import { transformFamilyTreeForApi } from '../utils/transformFamilyTree';
 
+const API_URL = import.meta.env.VITE_API_URL || 'https://mirasyedi-api-227035341689.us-central1.run.app';
+
 interface InheritanceResult {
   total_distributed: number;
   summary: {
@@ -97,7 +99,7 @@ export const FamilyTreeProvider = ({ children }: { children: ReactNode }) => {
   const calculateInheritance = async () => {
     try {
       const requestData = transformFamilyTreeForApi(familyTree, estateValue);
-      const response = await fetch('http://localhost:8000/calculate', {
+      const response = await fetch(`${API_URL}/calculate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

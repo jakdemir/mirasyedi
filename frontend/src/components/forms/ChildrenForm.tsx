@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Switch } from '@headlessui/react';
-import { FamilyMember, InheritanceCalculation } from '../../types';
+import { FamilyMember } from '../../types';
 import { useFamilyTree } from '../../context/FamilyTreeContext';
 
 const ChildForm = ({ member, onUpdate }: { member: FamilyMember; onUpdate: (updates: Partial<FamilyMember>) => void }) => {
