@@ -1,158 +1,245 @@
 # Mirasyedi - Turkish Inheritance Calculator
 
-A web application for calculating inheritance distribution according to Turkish Civil Law.
+A modern web application that helps calculate inheritance distribution according to Turkish Civil Law.
 
-## Project Structure
+## Tech Stack
 
-```
-mirasyedi/
-├── frontend/          # React + TypeScript frontend
-└── backend/           # FastAPI Python backend
-```
+### Frontend
+- **Framework**: React with TypeScript
+- **Build Tool**: Vite
+- **State Management**: React Context API
+- **Styling**: Tailwind CSS
+- **Hosting**: Firebase Hosting
+- **Domain Management**: Cloudflare
+- **URL**: https://mirasyedi.com
 
-## Development Setup
+### Backend
+- **Framework**: FastAPI (Python)
+- **API Documentation**: OpenAPI/Swagger
+- **Hosting**: Google Cloud Run
+- **URL**: https://mirasyedi-api-227035341689.us-central1.run.app
 
-### Backend Setup
+## Architecture
 
-1. Navigate to the backend directory:
+The application follows a modern client-server architecture:
+- Frontend and backend are completely decoupled
+- RESTful API communication
+- CORS enabled for secure cross-origin requests
+- Serverless deployment for both frontend and backend
+
+## Key Features
+
+- Real-time inheritance calculation
+- Support for complex family tree structures
+- Responsive design for all devices
+- Type-safe implementation
+- Automated deployment pipeline
+
+## Development Environment Setup
+
+### Prerequisites
+- Node.js (v18 or higher)
+- Python 3.11 or higher
+- Google Cloud SDK
+- Firebase CLI
+- Git
+
+### Initial Setup
+
+1. **Clone the Repository**
    ```bash
-   cd backend
+   git clone https://github.com/yourusername/mirasyedi.git
+   cd mirasyedi
    ```
 
-2. Create and activate a virtual environment:
+2. **Backend Setup**
    ```bash
+   # Create and activate Python virtual environment
+   cd backend
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. Install dependencies:
-   ```bash
+   
+   # Install dependencies
    pip install -r requirements.txt
-   ```
-
-4. Run the development server:
-   ```bash
+   
+   # Start the development server
    uvicorn app.api:app --reload --port 8000
    ```
+   The backend API will be available at `http://localhost:8000`
+   API documentation will be at `http://localhost:8000/docs`
 
-The backend will be available at `http://localhost:8000`
-
-### Frontend Setup
-
-1. Navigate to the frontend directory:
+3. **Frontend Setup**
    ```bash
+   # In a new terminal
    cd frontend
-   ```
-
-2. Install dependencies:
-   ```bash
+   
+   # Install dependencies
    npm install
-   ```
-
-3. Run the development server:
-   ```bash
+   
+   # Start development server
    npm run dev
    ```
+   The frontend will be available at `http://localhost:5173`
 
-The frontend will be available at `http://localhost:5173`
+### Environment Configuration
 
-## Local Testing
+1. **Frontend Environment Files**
+   
+   Create `.env.development` in the frontend directory:
+   ```env
+   VITE_API_URL=http://localhost:8000
+   ```
 
-1. Start both backend and frontend servers as described above.
+   Create `.env.production` for production:
+   ```env
+   VITE_API_URL=https://mirasyedi-api-227035341689.us-central1.run.app
+   ```
 
-2. The frontend will automatically connect to the local backend at `http://localhost:8000`.
+2. **Backend Environment**
+   No environment variables are required for local development.
 
-3. Access the API documentation at `http://localhost:8000/docs` for testing backend endpoints directly.
+## Local Development Workflow
 
-## Deployment
+1. **Running Tests**
+   ```bash
+   # Backend tests
+   cd backend
+   pytest
+   
+   # Frontend tests
+   cd frontend
+   npm test
+   ```
+
+2. **Code Formatting**
+   ```bash
+   # Backend
+   cd backend
+   black .
+   
+   # Frontend
+   cd frontend
+   npm run format
+   ```
+
+3. **Type Checking**
+   ```bash
+   # Frontend
+   cd frontend
+   npm run type-check
+   ```
+
+## Deployment Process
 
 ### Backend Deployment (Google Cloud Run)
 
-1. Install Google Cloud SDK:
+1. **Initial Setup**
    ```bash
+   # Install Google Cloud SDK
    brew install google-cloud-sdk  # On macOS
-   ```
-
-2. Initialize and authenticate:
-   ```bash
+   
+   # Login and set project
    gcloud auth login
    gcloud config set project mirasyedi-backend
-   ```
-
-3. Enable required services:
-   ```bash
+   
+   # Enable required services
    gcloud services enable cloudbuild.googleapis.com run.googleapis.com containerregistry.googleapis.com
    ```
 
-4. Build and deploy:
+2. **Deploy Changes**
    ```bash
    cd backend
+   
+   # Build and push container
    gcloud builds submit --tag us-central1-docker.pkg.dev/mirasyedi-backend/mirasyedi-repo/api
-   gcloud run deploy mirasyedi-api --image us-central1-docker.pkg.dev/mirasyedi-backend/mirasyedi-repo/api --platform managed --region us-central1 --allow-unauthenticated
+   
+   # Deploy to Cloud Run
+   gcloud run deploy mirasyedi-api \
+     --image us-central1-docker.pkg.dev/mirasyedi-backend/mirasyedi-repo/api \
+     --platform managed \
+     --region us-central1 \
+     --allow-unauthenticated
    ```
 
 ### Frontend Deployment (Firebase)
 
-1. Install Firebase CLI:
+1. **Initial Setup**
    ```bash
+   # Install Firebase CLI
    npm install -g firebase-tools
-   ```
-
-2. Login to Firebase:
-   ```bash
+   
+   # Login to Firebase
    firebase login
+   
+   # Initialize Firebase in the project
+   cd frontend
+   firebase init hosting
    ```
 
-3. Build the frontend:
+2. **Deploy Changes**
    ```bash
    cd frontend
+   
+   # Build the application
    npm run build
+   
+   # Deploy to Firebase
+   firebase deploy
    ```
-
-4. Deploy to Firebase:
-   ```bash
-   firebase deploy --only hosting
-   ```
-
-## Environment Configuration
-
-### Frontend Environment Files
-
-- Development (`.env.development`):
-  ```
-  VITE_API_URL=http://localhost:8000
-  ```
-
-- Production (`.env.production`):
-  ```
-  VITE_API_URL=https://mirasyedi-api-227035341689.us-central1.run.app
-  ```
-
-## Deployed URLs
-
-- Frontend: https://mirasyedi-ec74e.web.app
-- Backend: https://mirasyedi-api-227035341689.us-central1.run.app
 
 ## Troubleshooting
 
-### CORS Issues
-If you encounter CORS errors, verify that the backend's CORS configuration includes your frontend's domain:
+### Common Issues
 
-```python
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "https://mirasyedi-ec74e.web.app",
-        "https://mirasyedi-ec74e.firebaseapp.com"
-    ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-```
+1. **CORS Errors**
+   - Verify backend CORS settings in `backend/app/api.py`
+   - Check that frontend API URL matches allowed origins
+   - Clear browser cache and reload
 
-### Deployment Issues
-- Ensure you have the correct permissions in Google Cloud and Firebase
-- Verify that billing is enabled for Google Cloud services
-- Check that all required APIs are enabled in Google Cloud Console
+2. **Deployment Failures**
+   - Ensure you have necessary permissions in Google Cloud and Firebase
+   - Verify billing is enabled for Google Cloud services
+   - Check if all required APIs are enabled
+
+3. **Local Development Issues**
+   - Verify both frontend and backend are running
+   - Check console for error messages
+   - Ensure correct Node.js and Python versions
+   - Clear node_modules and reinstall if needed
+
+### Getting Help
+
+1. **Logs**
+   - Backend logs: Available in Google Cloud Console
+   - Frontend logs: Check Firebase Hosting logs
+   - Local logs: Terminal output and browser console
+
+2. **Support**
+   - Create an issue in the repository
+   - Check existing issues for similar problems
+   - Include relevant logs and error messages
+
+## Environment Variables
+
+### Frontend
+- `VITE_API_URL`: Backend API URL
+
+### Backend
+- No environment variables required currently
+
+## Security
+
+- CORS configuration for allowed origins
+- Input validation on both frontend and backend
+- Secure HTTPS communication
+- No sensitive data storage
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests
+5. Submit a pull request
+
+Feel free to submit issues and enhancement requests.
